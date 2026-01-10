@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Arch needs `yay -S pacman-contrib` to run
+
+cupd=$(pacman -Qu | wc -l)
+# sleep 0.2
+echo " $cupd"

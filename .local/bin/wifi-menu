@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+terminal() {
+  ghostty --class=capndot.menu -e $1
+}
+
+terminal impala
