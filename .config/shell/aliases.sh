@@ -78,15 +78,8 @@ alias linutil='curl -fsSL https://christitus.com/linux | sh'
 # bare gti repo alias for managing dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
-# -------------------------------------------
-#  Suffix Aliases - Open Files by Extension
-# -------------------------------------------
-# Just type the filename to open it with the associated program
-alias -s py='$EDITOR'
-alias -s md='$EDITOR'
-
 # --------------------------------------------
-# Chezmoi edit and apply
+# .dotfiles repo edit and apply
 # --------------------------------------------
 ce() {
   $EDITOR $1
@@ -94,3 +87,10 @@ ce() {
   config commit -m "Modified $1"
   config push origin
 }
+
+# -------------------------------------------
+#  Suffix Aliases - Open Files by Extension
+# -------------------------------------------
+# Just type the filename to open it with the associated program
+alias -s py='$EDITOR'
+alias -s md='$EDITOR'
