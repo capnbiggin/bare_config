@@ -1,0 +1,10 @@
+/**
+ * Available Color Schemes
+ *
+ * catppuccin
+ *
+ * */
+
+/* Import color-scheme from 'colors' directory */
+
+@import "../../colors/catppuccin.rasi"

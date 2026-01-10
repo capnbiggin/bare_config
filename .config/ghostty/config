@@ -1,0 +1,9 @@
+# Font
+font-family = JetBrainsMono Nerd Font
+font-style = SemiBold
+font-size = 10
+
+background-opacity = 0.75
+
+# Theme
+theme = catppuccin-mocha

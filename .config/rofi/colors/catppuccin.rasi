@@ -1,0 +1,10 @@
+/* Catpuccin Color Scheme */
+
+* {
+    background:     #1e1e2e;
+    background-alt: #181825;
+    foreground:     #cdd6f4;
+    selected:       #b4befe;
+    active:         #94e2d5;
+    urgent:         #f38ba8;
+}

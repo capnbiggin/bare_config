@@ -1,0 +1,38 @@
+{
+  "layer": "top",
+  "position": "top",
+ // "height": 28,
+  "spacing": 0,
+  "margin-top": 10,
+  "margin-left": 12,
+  "margin-right": 12,
+ 
+  // Load Modules
+  "include": [
+    "~/.config/waybar/modules.json"
+  ],
+
+  // Waybar
+  "modules-left": [
+    "custom/apps",
+    "hyprland/workspaces", 
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock",
+    "power-profiles-daemon"
+  ],
+
+  "modules-right": [
+    "pulseaudio", 
+    "network", 
+    "cpu", 
+    "memory", 
+    "temperature", 
+    "battery", 
+    "custom/updates",
+    "custom/power"
+  ],
+  // end waybar
+}
