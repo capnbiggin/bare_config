@@ -91,6 +91,6 @@ alias -s md='$EDITOR'
 ce() {
   $EDITOR $1
   config add $1
-  config commit "Modified $1"
+  config commit -m "Modified $1"
   config push origin
 }
