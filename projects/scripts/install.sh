@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+# Set Actual Home
+ACTUAL_USER="${SUDO_USER:-$USER}"
+ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+
+# Script Directory
+SCRIPTS_DIR="$ACTUAL_HOME"/projects/capndot/scripts
+# Install Directory
+INSTALL_DIR="$SCRIPTS_DIR"/install
+
+source "$SCRIPTS_DIR"/script-beginer.sh
+
+# Check if running as root user
+if [ "$EUID" -eq 0 ]; then
+  log_error "\nDo not run this script as root!!\n"
+  exit 1
+fi
+
+show_logo() {
+  clear
+  echo -e "$CYAN"
+  cat <"$INSTALL_DIR"/logo.txt
+  echo -e "$NC"
+}
+
+# Update System
+sudo pacman -Syyu --noconfirm --needed
+
+show_logo
+
+if ping -q -c 2 -W 1 8.8.8.8 >/dev/null 2>&1; then
+  log_info "\nInternet connection is UP...  Continuing with install...\n"
+else
+  log_error "\nInternet connection is DOWN.. Exiting Script...\n"
+  exit 1
+fi
+
+source "$INSTALL_DIR"/aur-yay.sh
+source "$INSTALL_DIR"/base.sh
+source "$INSTALL_DIR"/fonts.sh
+
+source "$INSTALL_DIR"/niri.sh
+#source "$INSTALL_DIR"/config/all.sh
+#source "$INSTALL_DIR"/development/all.sh
+#source "$INSTALL_DIR"/desktops/all.sh
+
+source "$INSTALL_DIR"/zsh.sh
+
+if [[ -d "$ACTUAL_HOME/.local/share/chezmoi" ]]; then
+  chezmoi apply
+else
+  sudo pacman -S chezmoi
+  chezmoi init --apply --verbose https://gitlab.com/capnbiggin/dotfiles.git
+fi
+
+exit 0

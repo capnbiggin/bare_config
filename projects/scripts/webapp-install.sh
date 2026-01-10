@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Set Actual Home
+ACTUAL_USER="${SUDO_USER:-$USER}"
+ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+
+# Script Directory
+SCRIPTS_DIR="$ACTUAL_HOME"/.dotfiles/scripts
+
+if [ "$#" -ne 3 ]; then
+  source "$SCRIPTS_DIR"/show-logo.sh
+  echo -e "\e[32mLet's create a new web app you can start with the app launcher.\n\e[0m"
+  APP_NAME=$(gum input --prompt "Name> " --placeholder "My favorite web app")
+  APP_URL=$(gum input --prompt "URL> " --placeholder "https://example.com")
+  ICON_URL=$(gum input --prompt "Icon URL> " --placeholder "See https://dashboardicons.com (must use PNG!)")
+else
+  APP_NAME="$1"
+  APP_URL="$2"
+  ICON_URL="$3"
+fi
+
+if [[ -z "$APP_NAME" || -z "$APP_URL" || -z "$ICON_URL" ]]; then
+  echo "You must set app name, app URL, and icon URL!"
+  exit 1
+fi
+
+ICON_DIR="$ACTUAL_HOME/.local/share/applications/icons"
+DESKTOP_FILE="$ACTUAL_HOME/.local/share/applications/$APP_NAME.desktop"
+ICON_PATH="$ICON_DIR/$APP_NAME.png"
+
+mkdir -p "$ICON_DIR"
+
+if ! curl -sL -o "$ICON_PATH" "$ICON_URL"; then
+  echo "Error: Failed to download icon."
+  return 1
+fi
+
+cat >"$DESKTOP_FILE" <<EOF
+[Desktop Entry]
+Version=1.0
+Name=$APP_NAME
+Comment=$APP_NAME
+Exec=google-chrome-stable --new-window --ozone-platform=wayland --app="$APP_URL" --name="$APP_NAME" --class="$APP_NAME"
+Terminal=false
+Type=Application
+Icon=$ICON_PATH
+StartupNotify=true
+EOF
+
+chmod +x "$DESKTOP_FILE"
+
+if [ "$#" -ne 3 ]; then
+  echo -e "You can now find $APP_NAME using the app launcher (SUPER + SPACE)\n"
+fi
+
+source "$SCRIPTS_DIR/show-done.sh"
