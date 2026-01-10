@@ -476,7 +476,7 @@
         "tooltipsEnabled": true
     },
     "wallpaper": {
-        "directory": "/home/capn/projects/capndot/wallpapers",
+        "directory": "/home/capn/Pictures/wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "fillColor": "#000000",
