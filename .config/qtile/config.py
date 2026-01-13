@@ -7,7 +7,8 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = guess_terminal()
+terminal = "ghostty"
+launcher = "~/.config/rofi/launchers/launcher-1.sh"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -41,7 +42,9 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
+    # Terminal
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    key([mod], "Space", lazy.spawn(launcher), desc="Program Launcher")
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
