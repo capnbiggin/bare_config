@@ -1,5 +1,4 @@
 import os
-import os.system
 
 import libqtile.resources
 from libqtile import bar, layout, qtile, widget
@@ -8,7 +7,7 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
-terminal = "ghostty"
+terminal = guess_terminal()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -21,7 +20,7 @@ keys = [
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mo"ghostty", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
@@ -56,7 +55,6 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "p", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Rofi application launcher script"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -125,7 +123,7 @@ extension_defaults = widget_defaults.copy()
 logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
 screens = [
     Screen(
-        top=bar.Bar(
+        bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
                 widget.GroupBox(),
