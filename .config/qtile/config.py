@@ -57,6 +57,7 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
 ]
 
