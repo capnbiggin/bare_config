@@ -8,6 +8,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "ghostty"
+browser = "google-chrome-stable"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -55,7 +56,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "p", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -99,7 +101,7 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.Columns(border_focus_stack=["#eba0ac", "#fab387"], border_width=2),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
