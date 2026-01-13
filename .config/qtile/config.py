@@ -44,7 +44,7 @@ keys = [
     ),
     # Terminal
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    key([mod], "Space", lazy.spawn(launcher), desc="Program Launcher")
+    key([mod], "Space", lazy.spawn(os.path.expanduser(launcher)), desc="Program Launcher"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
