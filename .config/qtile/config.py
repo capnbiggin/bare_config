@@ -1,4 +1,5 @@
 import os
+import os.system
 
 import libqtile.resources
 from libqtile import bar, layout, qtile, widget
@@ -8,7 +9,6 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "ghostty"
-launcher = "~/.config/rofi/launchers/launcher-1.sh"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -18,10 +18,10 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    # Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
-    Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
+    Key([mo"ghostty", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
@@ -42,14 +42,12 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    # Terminal
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    key([mod], "Space", lazy.spawn(os.path.expanduser(launcher)), desc="Program Launcher"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key(
-        [rod],
+        [mod],
         "f",
         lazy.window.toggle_fullscreen(),
         desc="Toggle fullscreen on the focused window",
@@ -58,6 +56,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "p", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Rofi application launcher script"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -201,6 +200,7 @@ wl_input_rules = None
 wl_xcursor_theme = None
 wl_xcursor_size = 24
 
+idle_timers = []  # type: list
 idle_inhibitors = []  # type: list
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
