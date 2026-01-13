@@ -11,6 +11,13 @@ terminal = "ghostty"
 browser = "google-chrome-stable"
 
 keys = [
+    # Basics
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
+    Key([mod], "w", lazy.spawn(browser), desc="Launch browser"),
+    Key([mod, "control"], "c", lazy.window.kill(), desc="Kill focused window"),
+
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
@@ -38,14 +45,12 @@ keys = [
     # multiple stack panes
     Key(
         [mod, "shift"],
-        "Return",
+        "s",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key(
         [mod],
         "f",
@@ -56,9 +61,6 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
-    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
-    Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
 ]
 
 # Add key bindings to switch VTs in Wayland.
@@ -101,8 +103,15 @@ for i in groups:
         ]
     )
 
+layout_theme = {
+    "border_width": 2,
+    "margin": 8,
+    "border_focus": "#eba0ac",
+    "border_normal": "#fab387"
+}
+
 layouts = [
-    layout.Columns(border_focus_stack=["#eba0ac", "#fab387"], border_width=2),
+    layout.Columns(**layout_theme),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
