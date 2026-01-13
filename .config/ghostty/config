@@ -4,6 +4,7 @@ font-style = SemiBold
 font-size = 10
 
 background-opacity = 0.75
+window-decoration = none
 
 # Theme
 theme = catppuccin-mocha
