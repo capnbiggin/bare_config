@@ -1,7 +1,8 @@
 import os
+import subprocess
 
 import libqtile.resources
-from libqtile import bar, layout, qtile, widget
+from libqtile import bar, hook, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
@@ -213,6 +214,11 @@ wl_xcursor_size = 24
 
 idle_timers = []  # type: list
 idle_inhibitors = []  # type: list
+
+@hook.subscribe.startup_once
+def start_once():
+    start = os.path.expanduser("~/.config/qtile/autostart_x11.sh")
+    subprocess.run([start])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
