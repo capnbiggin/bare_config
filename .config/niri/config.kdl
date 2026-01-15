@@ -201,12 +201,12 @@ binds {
 
     // Menu keybinds
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
-    Mod+SPACE hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher-1.sh"; }
-    Mod+ALT+SPACE hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/.config/rofi/scripts/capndot-menu.sh"; }
+    Mod+ALT+RETURN hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher-1.sh"; }
+    Mod+CTRL+RETURN hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/.config/rofi/scripts/capndot-menu.sh"; }
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.config/rofi/scripts/clipboard-history.sh"; }
-    Mod+R hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.config/rofi/scripts/projects_menu.sh"; }
-    Mod+SHIFT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.config/rofi/scripts/tmux_sessions.sh"; }
-    Mod+ALT+R hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.config/rofi/scripts/kill_tmux_sessions.sh"; }
+    Mod+SHIFT+RETURN hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.config/rofi/scripts/projects_menu.sh"; }
+    Mod+SHIFT+CTRL+RETURN hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.config/rofi/scripts/tmux_sessions.sh"; }
+    Mod+SHIFT+ALT+RETURN hotkey-overlay-title="Kill Tmux Session" { spawn-sh "~/.config/rofi/scripts/kill_tmux_sessions.sh"; }
     Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
 
     // Volume 
