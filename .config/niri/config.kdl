@@ -108,9 +108,9 @@ layout {
 // Autostart //
 ///////////////
 // spawn-at-startup "qs" "-c" "noctalia-shell"
-spawn-sh-at-startup "waypaper" "--backend" "swww" "--restore"
-spawn-sh-at-startup "waybar"
-spawn-sh-at-startup "xwayland-satellite"
+spawn-at-startup "waypaper" "--backend" "swaybg" "--restore"
+spawn-at-startup "waybar"
+spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store" 
