@@ -57,12 +57,18 @@ system_menu() {
   esac
 }
 
-main_menu() {
-  case $(menu "Start" " Apps\n  Tmux_Sessions\n  Project\n  Kill_Tmux_Session\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
-  *Apps*) "$ROFI_DIR"/launchers/launcher-1.sh ;;
+tmux_sessions() {
+  case $(menu "Tmux Sessions" "  Project\n  Tmux_Sessions\n  Kill_Tmux_Session") in
+  *Project*) "$ROFI_DIR"/scripts/projects_menu.sh ;;
   *Tmux_Sessions*) "$ROFI_DIR"/scripts/tmux_sessions.sh ;;
   *Kill_Tmux_Session*) "$ROFI_DIR"/scripts/kill_tmux_sessions.sh ;;
-  *Project*) "$ROFI_DIR"/scripts/projects_menu.sh ;;
+  esac
+}
+
+main_menu() {
+  case $(menu "Start" " Apps\n  Tmux\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
+  *Apps*) "$ROFI_DIR"/launchers/launcher-1.sh ;;
+  *Tmux*) tmux_sessions ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;
