@@ -48,8 +48,8 @@
   },
   "custom/omarchy": {
     "format": " ",
-    "on-click": "~/local/bin/capndot-menu",
-    "tooltip-format": "Capndot Menu\n\nSuper + Shift + Space"
+    "on-click": "~/.config/rofi/scripts/capndot-menu.sh",
+    "tooltip-format": "Capndot Menu\n\nSUPER + CONTROL + RETURN"
   },
   "cpu": {
     "interval": 5,
