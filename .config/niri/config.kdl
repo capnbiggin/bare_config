@@ -210,7 +210,7 @@ binds {
     Mod+SHIFT+RETURN hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.config/rofi/scripts/projects_menu.sh"; }
     Mod+SHIFT+CTRL+RETURN hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.config/rofi/scripts/tmux_sessions.sh"; }
     Mod+SHIFT+ALT+RETURN hotkey-overlay-title="Kill Tmux Session" { spawn-sh "~/.config/rofi/scripts/kill_tmux_sessions.sh"; }
-    Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    Mod+SHIFT+W hotkey-overlay-title="Wallpaper Switcher" { spawn-sh "waypaper"; }
 
     // Volume 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
