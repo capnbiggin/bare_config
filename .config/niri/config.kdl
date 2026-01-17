@@ -147,6 +147,7 @@ window-rule {
 // capndot.menu
 window-rule {
   match app-id="^capndot.menu$"
+  match app-id="^waypaper$"
   open-floating true
 }
 
