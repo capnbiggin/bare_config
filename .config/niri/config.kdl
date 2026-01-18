@@ -199,7 +199,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+RETURN hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
-    Mod+W hotkey-overlay-title="Run an Application: Google Chrome" { spawn "google-chrome-stable"; }
+    Mod+CTRL+W hotkey-overlay-title="Run an Application: Vivaldi" { spawn "vivaldi"; }
+    Mod+CTRL+W hotkey-overlay-title="Run an Application: Google Chrome" { spawn "google-chrome-stable"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     // Menu keybinds
