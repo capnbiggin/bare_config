@@ -206,7 +206,7 @@ binds {
     // Menu keybinds
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
     Mod+ALT+RETURN hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher-1.sh"; }
-    Mod+CTRL+RETURN hotkey-overlay-title="Run Capndot Menu" { spawn-sh "~/.config/rofi/scripts/capndot-menu.sh"; }
+    Mod+CTRL+RETURN hotkey-overlay-title="Run Capn Menu" { spawn-sh "~/.config/rofi/scripts/capn-menu.sh"; }
     Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "~/.config/rofi/scripts/clipboard-history.sh"; }
     Mod+SHIFT+RETURN hotkey-overlay-title="Open Repo Directory in Tmux" { spawn-sh "~/.config/rofi/scripts/projects_menu.sh"; }
     Mod+SHIFT+CTRL+RETURN hotkey-overlay-title="Open Tmux Session" { spawn-sh "~/.config/rofi/scripts/tmux_sessions.sh"; }
