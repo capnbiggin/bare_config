@@ -5,7 +5,7 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="$ACTUAL_HOME"/projects/capndot/scripts
+SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 # Install Directory
 INSTALL_DIR="$SCRIPTS_DIR"/install
 
@@ -47,11 +47,5 @@ source "$INSTALL_DIR"/niri.sh
 
 source "$INSTALL_DIR"/zsh.sh
 
-if [[ -d "$ACTUAL_HOME/.local/share/chezmoi" ]]; then
-  chezmoi apply
-else
-  sudo pacman -S chezmoi
-  chezmoi init --apply --verbose https://gitlab.com/capnbiggin/dotfiles.git
-fi
-
+log_warning "\nRecamend restart"
 exit 0
