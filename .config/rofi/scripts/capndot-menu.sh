@@ -4,7 +4,7 @@
 ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
-SCRIPTS_DIR="$ACTUAL_HOME"/projects/capndot/scripts
+SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 ROFI_DIR="$ACTUAL_HOME"/.config/rofi
 
 menu() {
