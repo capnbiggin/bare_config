@@ -33,16 +33,15 @@ config config --local status.showUntrackedFiles no
 ```
 
 
-### My Keybinds
-```
-SUPER+RETURN            - Terminal (ghostty)
-SUPER+ALT+RETURN        - Rofi Launcher
-SUPER+W                 - Browser1 (vivialdi)
-SUPER+CTRL+W            - Browser2 (google-chrome)
-SUPER+SHIFT+W           - Wallpaper Picker (waypaper plus a backend i.e. feh or swww)
-SUPER+CTRL+RETURN       - Rofi My Menu Launcher
-SUPER+SHIFT+RETURN      - Rofi Menu: Open Project from projects directory
-SUPER+SHIFT+CTRL+RETURN - Rofi Menu: Open tmux Session
-SUPER+SHIFT+ATL+RETURN  - Rofi Menu: Kill tmux session
-SUPER+V                 - Clipboard History
-```
+| Key bind | Command |
+| ------ | ------|
+| SUPER+RETURN            |  Terminal (ghostty) |
+| SUPER+ALT+RETURN        |  Rofi Launcher |
+| SUPER+W                 |  Browser1 (vivialdi) |
+| SUPER+CTRL+W            |  Browser2 (google-chrome) |
+| SUPER+SHIFT+W           |  Wallpaper Picker (waypaper plus a backend i.e. feh or swww) |
+| SUPER+CTRL+RETURN       |  Rofi My Menu Launcher |
+| SUPER+SHIFT+RETURN      |  Rofi Menu: Open Project from projects directory |
+| SUPER+SHIFT+CTRL+RETURN |  Rofi Menu: Open tmux Session |
+| SUPER+SHIFT+ATL+RETURN  |  Rofi Menu: Kill tmux session |
+| SUPER+V                 |  Clipboard History |
