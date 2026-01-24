@@ -108,8 +108,9 @@ layout {
 // Autostart //
 ///////////////
 // spawn-at-startup "qs" "-c" "noctalia-shell"
+// spawn-at-startup "waybar"
+spawn-at-startup "dms" "run"
 spawn-at-startup "waypaper" "--backend" "swww" "--restore"
-spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
