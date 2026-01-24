@@ -109,7 +109,7 @@ layout {
 ///////////////
 // spawn-at-startup "qs" "-c" "noctalia-shell"
 // spawn-at-startup "waybar"
-spawn-at-startup "dms" "run"
+// spawn-at-startup "dms" "run"
 spawn-at-startup "waypaper" "--backend" "swww" "--restore"
 spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
