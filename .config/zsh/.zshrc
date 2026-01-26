@@ -1,27 +1,33 @@
 # ~/.config/zsh/.zshrc
 
-# If not interactive. Do nothing.
+# ------------------------------- #
+# If not interactive. Do nothing. #
+# ------------------------------- #
 [[ $- != *i* ]] && return
 
-# source global shell alias & variable files
+# ------------------------------------------ #
+# source global shell alias & variable files #
+# ------------------------------------------ #
 [ -f "$HOME/.config/shell/aliases.sh" ] && source "$HOME/.config/shell/aliases.sh"
 
-# Checking for fastfetch
+# ---------------------- #
+# Checking for fastfetch #
+# ---------------------- #
 [ -f /usr/bin/fastfetch ] && fastfetch
 
-##################################
-#      Enviroment Variables      #
-##################################
-
+# -------------------- #
+# Enviroment Variables #
+# -------------------- #
 export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
-
 
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 export MANPAGER='nvim +Man!'
 
- #Command history
+# --------------- #
+# Command history #
+# --------------- #
 HISTFILE="$XDG_CACHE_HOME/.zsh_history"
 HISTSIZE=100000
 SAVEHIST=$HISTSIZE
@@ -34,34 +40,34 @@ setopt hist_ignore_dups      # Don't save duplicate lines
 setopt hist_find_no_dups     # Don't show duplicates
 setopt sharehistory          # Share history between sessins
 setopt appendhistory         # Appends history insted of overwriting
-
 unsetopt prompt_sp           # Don't autoclean blank line
 
-
-# Keybinds
+# -------- #
+# Keybinds #
+# -------- #
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# Completion styling
+# ------------------ #
+# Completion styling #
+# ------------------ #
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
-
 zstyle :compinstall filename '$HOME/.config/zsh/.zshrc'
-
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME"/zsh/zcompcache
 
-
-# Load Modules
+# ------------ #
+# Load Modules #
+# ------------ #
 zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
 
-##################################
-#           Prompt               #
-##################################
-
+# ------ #
+# Prompt #
+# ------ #
 if [[ -x $(command -v oh-my-posh) ]]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/myprompt.toml)"
 else [ -d $HOME/.config/zsh/plugins/pure ]
@@ -77,7 +83,9 @@ fi
 #          Sources              #
 #################################
 
-# Set up fzf key bindings and fuzzy completion
+# -------------------------------------------- #
+# Set up fzf key bindings and fuzzy completion #
+# -------------------------------------------- #
 if command -v fzf &> /dev/null; then
   source <(fzf --zsh)
   export FZF_DEFAULT_OPTS=" \
@@ -89,23 +97,31 @@ if command -v fzf &> /dev/null; then
     --color=border:#313244,label:#CDD6F4"
 fi
 
-# set up zoxide
+# ------------- #
+# set up zoxide #
+# ------------- #
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
-
-# zsh plugins
+# ----------- #
+# zsh plugins #
+# ----------- #
 [ -d $HOME/.config/zsh/plugins/zsh-syntax-highlighting ] && source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -d $HOME/.config/zsh/plugins/zsh-autosuggestions ] && source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -d $HOME/.config/zsh/plugins/plugins/zsh-history-substring-search ] && source $HOME/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 [ -d $HOME/.config/zsh/plugins/zsh-you-should-use ] && source $HOME/.config/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
 
-# Start terminal with Tmux
+# ------------------------ #
+# Start terminal with Tmux #
+# ------------------------ #
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t mySession || tmux new -s mySession
 fi
 
+# ---- #
+# yazi #
+# ---- #
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	yazi "$@" --cwd-file="$tmp"
@@ -114,6 +130,9 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# --- #
+# NVM #
+# --- #
 export NVM_DIR="$HOME/.config//nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
