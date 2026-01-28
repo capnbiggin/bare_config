@@ -5,11 +5,12 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
+SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+LIB_DIR="${SCRIPTS_DIR}/lib"
 # Install Directory
-INSTALL_DIR="$SCRIPTS_DIR"/install
+INSTALL_DIR="${SCRIPTS_DIR}/install"
 
-source "$SCRIPTS_DIR"/script-beginer.sh
+source "${LIB_DIR}/common.sh"
 
 # Check if running as root user
 if [ "$EUID" -eq 0 ]; then
@@ -20,7 +21,7 @@ fi
 show_logo() {
   clear
   echo -e "$CYAN"
-  cat <"$INSTALL_DIR"/logo.txt
+  cat <"${LIB_DIR}/logo.txt"
   echo -e "$NC"
 }
 
@@ -36,16 +37,16 @@ else
   exit 1
 fi
 
-source "$INSTALL_DIR"/aur-yay.sh
-source "$INSTALL_DIR"/base.sh
-source "$INSTALL_DIR"/fonts.sh
+source "${INSTALL_DIR}/aur-yay.sh"
+source "${INSTALL_DIR}/base.sh"
+source "${INSTALL_DIR}/fonts.sh"
 
-source "$INSTALL_DIR"/niri.sh
+source "${INSTALL_DIR}/niri.sh"
 #source "$INSTALL_DIR"/config/all.sh
 #source "$INSTALL_DIR"/development/all.sh
 #source "$INSTALL_DIR"/desktops/all.sh
 
-source "$INSTALL_DIR"/zsh.sh
+source "${INSTALL_DIR}/zsh.sh"
 
 log_warning "\nRecamend restart"
 exit 0
