@@ -9,7 +9,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "ghostty"
-browser = "vivialdi"
+browser = "vivaldi"
 
 keys = [
     # Basics
