@@ -217,8 +217,8 @@ idle_inhibitors = []  # type: list
 
 @hook.subscribe.startup_once
 def start_once():
-    start = os.path.expanduser("~/.config/qtile/autostart_x11.sh")
-    subprocess.run([start])
+    home = os.path.expanduser("~")
+    subprocess.call([home + ".config/qtile/autostart.sh"])
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
 # string besides java UI toolkits; you can see several discussions on the
