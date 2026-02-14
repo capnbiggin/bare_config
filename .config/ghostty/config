@@ -3,6 +3,8 @@ font-family = JetBrainsMono Nerd Font
 font-style = SemiBold
 font-size = 10
 
+window-decoration = none
+
 background-opacity = 0.9
 # window-decoration = none
 
