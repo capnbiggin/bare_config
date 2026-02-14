@@ -139,6 +139,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
+                widget.Spacer(length = 8),
                 widget.GroupBox(),
                 widget.CurrentLayout(),
                 widget.Prompt(),
@@ -156,6 +157,7 @@ screens = [
                 # widget.StatusNotifier(),
                 # widget.Systray(),
                 # widget.QuickExit(),
+                widget.Spacer(length = 8),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
