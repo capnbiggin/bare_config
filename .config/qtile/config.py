@@ -139,8 +139,8 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
                 widget.GroupBox(),
+                widget.CurrentLayout(),
                 widget.Prompt(),
                 widget.WindowName(),
                 widget.Chord(
@@ -149,15 +149,13 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Spacer(length=bar.STRETCH),
                 widget.Clock(format="%a, %b %d - %H:%M"),
-                widget.Spacer(length=bar,STRETCH),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # widget.TextBox("default config", name="default"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
-                widget.Systray(),
-                widget.QuickExit(),
+                # widget.Systray(),
+                # widget.QuickExit(),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
