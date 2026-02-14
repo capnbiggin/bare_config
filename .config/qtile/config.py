@@ -14,7 +14,7 @@ browser = "vivaldi"
 keys = [
     # Basics
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod, "mod1"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
     Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
     Key([mod], "w", lazy.spawn(browser), desc="Launch browser"),
     Key([mod, "control"], "c", lazy.window.kill(), desc="Kill focused window"),
