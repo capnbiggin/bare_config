@@ -4,6 +4,6 @@
 # Autostart Programs #
 # ------------------ #
 
-picon --daemon &
+picom --daemon &
 sleep 1
 waypaper --backend feh --restore &
