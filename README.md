@@ -4,7 +4,7 @@
 
 1. Clove Repository
 ```bash
-git clone --bare https://gitlab.com/capnbiggin/bare_dotfiles.git $HOME/.dotfiles
+git clone --bare https://github.com/capnbiggin/bare_config.git $HOME/.dotfiles
 ```
 
 2. Define the alias in the current shell scope:
