@@ -97,6 +97,8 @@ if command -v fzf &> /dev/null; then
     --color=border:#313244,label:#CDD6F4"
 fi
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
+
 # ------------- #
 # set up zoxide #
 # ------------- #
