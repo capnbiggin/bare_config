@@ -10,13 +10,22 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = "ghostty"
 browser = "vivaldi"
+browser2 = "google-chrome"
 
 keys = [
     # Basics
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+
     Key([mod, "mod1"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
     Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
+    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/projects_menu.sh")), desc="Spawn projects launcher"),
+    Key([mod, "shift", "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/tmux_sessions.sh")), desc="Spawn tmux session launcher"),
+    Key([mod, "mod1", "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/kill_tmux_sessions.sh")), desc="Spawn kill tmux session launcher"),
+    Key([mod], "v", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/clipboard-history.sh")), desc="Spawn clipboard history"),
+
     Key([mod], "w", lazy.spawn(browser), desc="Launch browser"),
+    Key([mod, "shift"], "w", lazy.spawn(browser2), desc="Launch browser"),
+
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 
     # A list of available commands that can be bound to keys can be found
