@@ -17,7 +17,7 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     Key([mod, "mod1"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
-    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
+    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh")), desc="Spawn menu launcher"),
     Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/projects_menu.sh")), desc="Spawn projects launcher"),
     Key([mod, "shift", "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/tmux_sessions.sh")), desc="Spawn tmux session launcher"),
     Key([mod, "mod1", "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/kill_tmux_sessions.sh")), desc="Spawn kill tmux session launcher"),
