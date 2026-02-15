@@ -17,7 +17,7 @@ keys = [
     Key([mod, "mod1"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
     Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capndot-menu.sh")), desc="Spawn menu launcher"),
     Key([mod], "w", lazy.spawn(browser), desc="Launch browser"),
-    Key([mod, "control"], "c", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
