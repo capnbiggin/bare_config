@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/capn/.config/zsh'
+let g:netrw_dirhist_9='/home/capn/.config'
+let g:netrw_dirhist_8='/home/capn'
+let g:netrw_dirhist_7='/home/capn/.vim'
+let g:netrw_dirhist_6='/home/capn/.vim/plugged'
+let g:netrw_dirhist_5='/home/capn/.vim'
+let g:netrw_dirhist_4='/home/capn/.vim/plugged'
+let g:netrw_dirhist_3='/home/capn/.vim'
+let g:netrw_dirhist_2='/home/capn'
+let g:netrw_dirhist_1='/home/capn/.vim'
