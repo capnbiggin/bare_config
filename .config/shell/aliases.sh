@@ -8,7 +8,7 @@
 if [[ -x $(command -v eza) ]]; then
   alias ls='eza -a --color=always --group-directories-first --icons=always'   # my preferred listing
   alias la='eza -al --color=always --group-directories-first --icons=always'  # all files and dirs
-  alias ll='eza -lah --color=always --group-directories-first --icons=always' # long format
+  alias ll='eza -lahg --color=always --group-directories-first --icons=always' # long format
   alias lt='eza -aT --color=always --group-directories-first --icons=always'  # tree listing
 else
   alias ls='ls -a'
