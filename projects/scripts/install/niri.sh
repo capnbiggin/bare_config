@@ -9,7 +9,7 @@ SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 # Install Directory
 INSTALL_DIR="$SCRIPTS_DIR"/install
 
-source "$SCRIPTS_DIR"/script-beginer.sh
+source "$SCRIPTS_DIR"/lib/common.sh
 source "$INSTALL_DIR"/packages_functions.conf
 
 for pak in "${NIRI[@]}"; do

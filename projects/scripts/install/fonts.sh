@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "../script-beginer.sh"
+source "../lib/common.sh"
 
 FONTS=(
   ttf-jetbrains-mono-nerd

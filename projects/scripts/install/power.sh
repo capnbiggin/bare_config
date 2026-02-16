@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$HOME/projects/capndot/scripts/script-beginer.sh"
+source "$HOME/projects/capndot/scripts/lib/common.sh"
 
 log-info "\nInstalling power-profiles-daemon\n"
 yay -S --noconfirm --needed power-profiles-daemon

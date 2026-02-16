@@ -5,13 +5,13 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Dotfiles Directory
-BASE_DIR="$ACTUAL_HOME"/projects/capndot
+BASE_DIR="$ACTUAL_HOME"/projects
 # Script Directory
 SCRIPTS_DIR="$BASE_DIR"/scripts
 # Config Directory
 CONFIG_DIR="$ACTUAL_HOME"/.config
 
-source "$SCRIPTS_DIR/script-beginer.sh"
+source "$SCRIPTS_DIR/lib/common.sh"
 
 log_info "\nInstalling Z Shell./n"
 sudo pacman -S --needed --noconfirm zsh which
