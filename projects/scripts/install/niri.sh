@@ -10,7 +10,7 @@ SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 INSTALL_DIR="$SCRIPTS_DIR"/install
 
 source "$SCRIPTS_DIR"/lib/common.sh
-source "$INSTALL_DIR"/packages_functions.conf
+source "$INSTALL_DIR"/packages.conf
 
 for pak in "${NIRI[@]}"; do
   log_info "Installing $pak"
