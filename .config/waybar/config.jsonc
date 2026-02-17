@@ -6,7 +6,7 @@
   "height": 26,
   "modules-left": [
     "custom/omarchy",
-    "niri/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "clock",
@@ -20,6 +20,7 @@
     "pulseaudio",
     "cpu",
     "battery",
+    "custom/notification",
     "power-profiles-daemon"
   ],
   "hyprland/workspaces": {
@@ -48,7 +49,7 @@
   },
   "custom/omarchy": {
     "format": " ",
-    "on-click": "~/.config/rofi/scripts/capndot-menu.sh",
+    "on-click": "~/.config/rofi/scripts/capn-menu.sh",
     "tooltip-format": "Capndot Menu\n\nSUPER + CONTROL + RETURN"
   },
   "cpu": {
@@ -79,7 +80,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "~/capndot/bin/wifi-menu"
+    "on-click": "~/.local/bin/wifi-menu"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -168,6 +169,26 @@
   "tray": {
     "icon-size": 12,
     "spacing": 12
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{0} {icon}",
+    "format-icons": {
+    "notification": "󱅫",
+    "none": "󰂜",
+    "dnd-notification": "󰂠",
+    "dnd-none": "󰪓",
+    "inhibited-notification": "󰂛",
+    "inhibited-none": "󰪑",
+    "dnd-inhibited-notification": "󰂛",
+    "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
   "power-profiles-daemon": {
     "format": "{icon}",
