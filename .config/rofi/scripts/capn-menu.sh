@@ -12,7 +12,7 @@ menu() {
 }
 
 terminal() {
-  ghostty --class=capn.menu -e bash -c "$1"
+  ghostty --class=capn.menu.window -e bash -c "$1"
 }
 
 browser() {
