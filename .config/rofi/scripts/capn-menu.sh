@@ -73,7 +73,7 @@ main_menu() {
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;
   *System*) system_menu ;;
-  *About*) ghostty --class=capndot.menu.window --title=About -e bash -c 'fastfetch; read -n 1 -s' ;;
+  *About*) ghostty --class=capn.menu.window --title=About -e bash -c 'fastfetch; read -n 1 -s' ;;
   esac
 }
 
