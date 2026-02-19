@@ -20,7 +20,13 @@
 # -------------------- #
 export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 
-export EDITOR="nvim"
+if command -v nvim &> /dev/null; then
+  export EDITOR="nvim"
+elif command -v vim &. /dev/null; then
+  export EDITOR="vim"
+else
+  export EDITOR="nano"
+fi
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
 export MANPAGER='nvim +Man!'
