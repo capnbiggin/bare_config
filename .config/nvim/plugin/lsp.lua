@@ -263,6 +263,13 @@ vim.lsp.config['templ'] = {
     capabilities = caps,
 }
 
+vim.lsp.config['marksman'] ={
+    cmd = { "marksman", "server" },
+    filetypes = { "markdown", "markdown.mdx" },
+    root_markers = { ".marksman.toml", ".git" },
+    capabilities = caps,
+}
+
 vim.filetype.add({
     extension = {
         h = 'c',
