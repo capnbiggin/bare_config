@@ -94,6 +94,11 @@ alias newtag='git tag -a'
 # bare gti repo alias for managing dotfiles
 # -----------------------------------------
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+config_acp() {
+  config add $1
+  config commit im "Modified/Added $1 - $(date)"
+  config push origin
+}
 
 # -------
 # linutil
@@ -106,7 +111,7 @@ alias linutil='curl -fsSL https://christitus.com/linux | sh'
 ce() {
   $EDITOR $1
   config add $1
-  config commit -m "Modified $1"
+  config commit -m "Modified $1 - $(date)"
   config push origin
 }
 
