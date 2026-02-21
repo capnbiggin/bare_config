@@ -1,14 +1,14 @@
 {
 	"custom/weather": {
-		// "exec":
+		"exec": "~/.config/waybar/scripts/openweathermap",
 		// "exec-if":
 		// "exec-on-event":
 		// "hide-empty-text":
-		// "return-type":
-		// "interval":
+		"return-type": "json",
+		"interval": 1800,
 		// "restart-interval":
 		// "signal":
-		//"format": "󰤄",
+		"format": "{}",
 		// "format-icons":
 		// "rotate":
 		// "min-length":
@@ -22,7 +22,7 @@
 		// "on-scroll-up":
 		// "on-scroll-down":
 		// "smooth-scrolling-threshold":
-		// "tooltip":
+		"tooltip": true,
 		//"tooltip-format": ""
 		// "escape":
 		// "menu":
