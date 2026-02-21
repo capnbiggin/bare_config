@@ -5,11 +5,11 @@ ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 # Script Directory
-SCRIPTS_DIR="$ACTUAL_HOME"/git_repos/capndot/scripts
+SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 # Install Directory
 INSTALL_DIR="$SCRIPTS_DIR"/install
 
-source "$SCRIPTS_DIR"/script-beginer.sh
+source "$SCRIPTS_DIR"/lib/common.sh
 
 log_info "\nInstalling bluberry Bluetooh controls\n"
 yay -S --noconfirm --needed bluberry
