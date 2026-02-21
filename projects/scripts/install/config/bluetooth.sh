@@ -12,7 +12,7 @@ INSTALL_DIR="$SCRIPTS_DIR"/install
 source "$SCRIPTS_DIR"/lib/common.sh
 
 log_info "\nInstalling bluberry Bluetooh controls\n"
-yay -S --noconfirm --needed bluberry
+yay -S --noconfirm --needed blueberry
 
 log_info "\nTurning on bluetooth servise by default\n"
 sudo systemctl enable --now bluetooth
