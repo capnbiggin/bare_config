@@ -22,3 +22,4 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 config checkout --force
 
 config config --local status.showUntrackedFiles no
+
