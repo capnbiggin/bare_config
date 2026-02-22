@@ -32,4 +32,3 @@ if ! command -v yay &>/dev/null; then
 else
   log_info "$\nyay is already installed\n"
 fi
-
