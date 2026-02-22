@@ -40,13 +40,21 @@ fi
 source "${INSTALL_DIR}/aur-yay.sh"
 source "${INSTALL_DIR}/base.sh"
 source "${INSTALL_DIR}/fonts.sh"
+source "${INSTALL_DIR}/gum.sh"
 
-source "${INSTALL_DIR}/niri.sh"
-#source "$INSTALL_DIR"/config/all.sh
-#source "$INSTALL_DIR"/development/all.sh
-#source "$INSTALL_DIR"/desktops/all.sh
+# source "${INSTALL_DIR}/niri.sh"
+# source "${INSTALL_DIR}/qtile.sh"
+source "${INSTALL_DIR}/hypr.sh"
+source "${INSTALL_DIR}/backlight.sh"
+source "${INSTALL_DIR}/bluetooth.sh"
+source "${INSTALL_DIR}/docker.sh"
+source "${INSTALL_DIR}/power.sh"
+source "${INSTALL_DIR}/screen-cap.sh"
+source "${INSTALL_DIR}/webapps.sh"
+
 
 source "${INSTALL_DIR}/zsh.sh"
 
-log_warning "\nRecamend restart"
+log_warning "\nRESTART NEEDED!!!"
+nonify-send "RESTART NEEDED"
 exit 0
