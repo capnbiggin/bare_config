@@ -52,7 +52,6 @@ source "${INSTALL_DIR}/power.sh"
 source "${INSTALL_DIR}/screen-cap.sh"
 source "${INSTALL_DIR}/webapps.sh"
 
-
 source "${INSTALL_DIR}/zsh.sh"
 
 log_warning "\nRESTART NEEDED!!!"
