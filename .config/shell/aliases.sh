@@ -96,7 +96,7 @@ alias newtag='git tag -a'
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 config_acp() {
   config add $1
-  config commit im "Modified/Added $1 - $(date)"
+  config commit -m "Modified/Added $1 - $(date)"
   config push origin
 }
 
