@@ -37,6 +37,7 @@ else
   exit 1
 fi
 
+source "${INSTALL_DIR}/configs.sh"
 source "${INSTALL_DIR}/aur-yay.sh"
 source "${INSTALL_DIR}/base.sh"
 source "${INSTALL_DIR}/fonts.sh"
@@ -57,3 +58,4 @@ source "${INSTALL_DIR}/zsh.sh"
 log_warning "\nRESTART NEEDED!!!"
 nonify-send "RESTART NEEDED"
 exit 0
+
