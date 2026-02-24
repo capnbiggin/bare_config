@@ -91,17 +91,17 @@ display_module() {
 		tooltip="Cannot fetch updates. Right-click to retry."
 	elif ((PAC_UPD + AUR_UPD == 0)); then
 		icon='󰸟'
-		tooltip="No updates available"
+		# tooltip="No updates available"
 	else
 		icon='󰄠'
-		tooltip="<b>Official</b>: $PAC_UPD"
+		tooltip=" $PAC_UPD"
 
 		if [[ -n $HELPER ]]; then
-			tooltip+="\n<b>AUR($HELPER)</b>: $AUR_UPD"
+			tooltip+=" AUR: $AUR_UPD"
 		fi
 	fi
 
-	command printf '{ "text": "%s", "tooltip": "%s" }\n' "$icon" "$tooltip"
+	command printf '{ "%s" "%s" }' "$icon" "$tooltip"
 }
 
 main() {
