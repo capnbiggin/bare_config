@@ -101,7 +101,7 @@ display_module() {
 		fi
 	fi
 
-	command printf '{ "%s" "%s" }' "$icon" "$tooltip"
+	command printf '{ %s %s }' "$icon" "$tooltip"
 }
 
 main() {
