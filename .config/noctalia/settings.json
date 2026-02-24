@@ -158,6 +158,40 @@
             ],
             "right": [
                 {
+                    "colorizeSystemIcon": "none",
+                    "enableColorization": true,
+                    "generalTooltipText": "",
+                    "hideMode": "alwaysExpanded",
+                    "icon": "arrow-bar-down",
+                    "id": "CustomButton",
+                    "ipcIdentifier": "",
+                    "leftClickExec": "ghostty --class=capn.menu.window -e ~/.config/waybar/scripts/update\n",
+                    "leftClickUpdateText": true,
+                    "maxTextLength": {
+                        "horizontal": 10,
+                        "vertical": 10
+                    },
+                    "middleClickExec": "",
+                    "middleClickUpdateText": false,
+                    "parseJson": false,
+                    "rightClickExec": "~/.config/waybar/scripts/update module",
+                    "rightClickUpdateText": true,
+                    "showExecTooltip": true,
+                    "showIcon": false,
+                    "showTextTooltip": true,
+                    "textCollapse": "",
+                    "textCommand": "~/.config/waybar/scripts/update module",
+                    "textIntervalMs": 3600,
+                    "textStream": false,
+                    "wheelDownExec": "",
+                    "wheelDownUpdateText": false,
+                    "wheelExec": "",
+                    "wheelMode": "unified",
+                    "wheelUpExec": "",
+                    "wheelUpUpdateText": false,
+                    "wheelUpdateText": false
+                },
+                {
                     "blacklist": [
                     ],
                     "chevronColor": "none",
