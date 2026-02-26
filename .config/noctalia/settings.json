@@ -348,13 +348,12 @@
         "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 0.6,
-        "displayMode": "auto_hide",
+        "displayMode": "always_visible",
         "dockType": "floating",
-        "enabled": true,
+        "enabled": false,
         "floatingRatio": 1,
         "inactiveIndicators": false,
         "monitors": [
-            "HDMI-A-1"
         ],
         "onlySameOutput": true,
         "pinnedApps": [
@@ -479,10 +478,10 @@
         "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
-        "enableMarkdown": false,
+        "enableMarkdown": true,
         "enableMediaToast": false,
         "enabled": true,
-        "location": "top_right",
+        "location": "top",
         "lowUrgencyDuration": 3,
         "monitors": [
         ],
@@ -602,7 +601,7 @@
         "swapWarningThreshold": 80,
         "tempCriticalThreshold": 90,
         "tempWarningThreshold": 80,
-        "useCustomColors": false,
+        "useCustomColors": true,
         "warningColor": "#9ece6a"
     },
     "templates": {
@@ -614,9 +613,9 @@
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "boxBorderEnabled": false,
-        "fontDefault": "Sans Serif",
+        "fontDefault": "LondonTwo",
         "fontDefaultScale": 1,
-        "fontFixed": "monospace",
+        "fontFixed": "JetBrainsMono NFP",
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 0.93,
