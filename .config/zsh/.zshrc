@@ -22,7 +22,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 
 if command -v nvim &> /dev/null; then
   export EDITOR="nvim"
-else command -v vim &. /dev/null; then
+elif command -v vim &. /dev/null; then
   export EDITOR="vim"
 else
   export EDITOR="nano"
@@ -76,7 +76,7 @@ autoload -U colors && colors
 # ------ #
 if [[ -x $(command -v starship) ]]; then
   eval "$(starship init zsh)"
-else [[ -x $(command -v oh-my-posh) ]]
+elif [[ -x $(command -v oh-my-posh) ]]; then
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/myprompt.toml)"
 else [[ -d $HOME/.config/zsh/plugins/pure ]]
   PURE_GIT_PULL=0
