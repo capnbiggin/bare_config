@@ -2,7 +2,7 @@
 
 source ./lib/colors.sh
 source ./lib/common.sh
-source ./script-dir.sh
+source ./lib/script-dir.sh
 
 clear
 echo -e "${CYAN}"
