@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
-source ."${SCRIPTS_DIR}"/lib/common.sh
-source ."${SCRIPTS_DIR}"/lib/colors.sh
+source "${HOME}"/projects/scripts/lib/env.sh
+source "${LIB_DIR}"/colors.sh
+source "${LIB_DIR}"/lib/common.sh
 
-LIB_DIR="${SCRIPTS_DIR}/lib"
 # Install Directory
 INSTALL_DIR="${SCRIPTS_DIR}/install"
-
 
 # Check if running as root user
 if [ "$EUID" -eq 0 ]; then
@@ -54,4 +53,3 @@ source "${INSTALL_DIR}/zsh.sh"
 log_warning "\nRESTART NEEDED!!!"
 nonify-send "RESTART NEEDED"
 exit 0
-
