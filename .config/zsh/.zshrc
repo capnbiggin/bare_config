@@ -74,9 +74,11 @@ autoload -U colors && colors
 # ------ #
 # Prompt #
 # ------ #
-if [[ -x $(command -v oh-my-posh) ]]; then
+if [[ -x $(command -v starship) ]]; then
+  eval "$(starship init zsh)"
+else [[ -x $(command -v oh-my-posh) ]]
   eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/myprompt.toml)"
-else [ -d $HOME/.config/zsh/plugins/pure ]
+else [[ -d $HOME/.config/zsh/plugins/pure ]]
   PURE_GIT_PULL=0
 
   fpath+=($HOME/.config/zsh/plugins/pure)
@@ -123,9 +125,9 @@ fi
 # ------------------------ #
 # Start terminal with Tmux #
 # ------------------------ #
-#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-#    tmux attach -t mySession || tmux new -s mySession
-#fi
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t mySession || tmux new -s mySession
+fi
 
 # ---- #
 # yazi #
