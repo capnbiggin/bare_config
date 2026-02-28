@@ -22,7 +22,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/go/bin"
 
 if command -v nvim &> /dev/null; then
   export EDITOR="nvim"
-elif command -v vim &. /dev/null; then
+else command -v vim &. /dev/null; then
   export EDITOR="vim"
 else
   export EDITOR="nano"
