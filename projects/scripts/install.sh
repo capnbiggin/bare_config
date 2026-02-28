@@ -1,16 +1,13 @@
 #!/usr/bin/env bash
 
-# Set Actual Home
-ACTUAL_USER="${SUDO_USER:-$USER}"
-ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+source ./lib/script-dir.sh
+source ./lib/common.sh
+source ./lib/colors.sh
 
-# Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
 LIB_DIR="${SCRIPTS_DIR}/lib"
 # Install Directory
 INSTALL_DIR="${SCRIPTS_DIR}/install"
 
-source "${LIB_DIR}/common.sh"
 
 # Check if running as root user
 if [ "$EUID" -eq 0 ]; then
