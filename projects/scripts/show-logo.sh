@@ -5,6 +5,6 @@ source "$SCRIPTS_DIR"/lib/common.sh
 
 clear
 echo -e "${CYAN}"
-cat <"$LIB_DIR"/logo.txt
+cat <"$SCRIPTS_DIR"/lib/logo.txt
 echo -e "${NC}"
 echo
