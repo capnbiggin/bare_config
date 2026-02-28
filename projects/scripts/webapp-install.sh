@@ -7,6 +7,8 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 # Script Directory
 SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 
+source ."${SCRIPTS_DIR}"/lib/colors.sh
+
 if [ "$#" -ne 3 ]; then
   source "$SCRIPTS_DIR"/show-logo.sh
   echo -e "\e[32mLet's create a new web app you can start with the app launcher.\n\e[0m"
