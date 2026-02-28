@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
-# Set Actual Home
-ACTUAL_USER="${SUDO_USER:-$USER}"
-ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+source "${HOME}"/projects/scripts/lib/env.sh
+source "${LIB_DIR}"/colors.sh
+source "${LIB_DIR}"/lib/common.sh
 
-# Dotfiles Directory
-BASE_DIR="$ACTUAL_HOME"/projects
-# Script Directory
-SCRIPTS_DIR="$BASE_DIR"/scripts
 # Config Directory
 CONFIG_DIR="$ACTUAL_HOME"/.config
 

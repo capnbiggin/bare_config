@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source "../lib/common.sh"
+source "${HOME}"/projects/scripts/lib/env.sh
+source "${LIB_DIR}"/colors.sh
+source "${LIB_DIR}"/lib/common.sh
 
 FONTS=(
   ttf-jetbrains-mono-nerd

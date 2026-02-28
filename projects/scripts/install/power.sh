@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source "$HOME/projects/capndot/scripts/lib/common.sh"
+source "${HOME}"/projects/scripts/lib/env.sh
+source "${LIB_DIR}"/colors.sh
+source "${LIB_DIR}"/lib/common.sh
 
 log-info "\nInstalling power-profiles-daemon\n"
 yay -S --noconfirm --needed power-profiles-daemon
