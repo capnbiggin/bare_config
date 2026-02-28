@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-source ./lib/script-dir.sh
-source ./lib/common.sh
-source ./lib/colors.sh
+source ."${SCRIPTS_DIR}"/lib/common.sh
+source ."${SCRIPTS_DIR}"/lib/colors.sh
 
 LIB_DIR="${SCRIPTS_DIR}/lib"
 # Install Directory
