@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-source "$HOME"/projects/scripts/lib/script-dir.sh
-source "$LIB_DIR"/colors.sh
-source "$LIB_DIR"/common.sh
+source "$SCRIPTS_DIR"/lib/colors.sh
+source "$SCRIPTS_DIR"/lib/common.sh
 
 clear
 echo -e "${CYAN}"
