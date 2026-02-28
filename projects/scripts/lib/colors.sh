@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NC="/33[0m"
+NC="\33[0m"
 DEFAULT="\033[39m"
 BLACK="\033[30m"
 RED="\033[0;31m"
