@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
-# Set Actual Home
-ACTUAL_USER="${SUDO_USER:-$USER}"
-ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
-
-# Script Directory
-SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
-LIB_DIR="${SCRIPTS_DIR}/lib"
-
+source "${HOME}"/projects/scripts/lib/env.sh
 source "${LIB_DIR}"/colors.sh
 
 clear
