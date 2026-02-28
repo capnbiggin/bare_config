@@ -7,3 +7,4 @@ export CAPNDOT="$XDG_DATA_HOME/capndot/"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh/"
 
+export SCRIPT_DIR="$HOME/projects/scripts/"
