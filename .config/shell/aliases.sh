@@ -119,5 +119,5 @@ ce() {
 #  Suffix Aliases - Open Files by Extension
 # -------------------------------------------
 # Just type the filename to open it with the associated program
-alias -s py='$EDITOR'
-alias -s md='$EDITOR'
+#alias -s py='$EDITOR'
+#alias -s md='$EDITOR'
