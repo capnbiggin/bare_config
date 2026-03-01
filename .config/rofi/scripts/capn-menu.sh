@@ -9,8 +9,6 @@ ROFI_DIR="$ACTUAL_HOME"/.config/rofi
 ROFI_SCRIPTS_DIR="$ACTUAL_HOME"/.config/rofi/scripts
 CONFIG_DIR="$ACTUAL_HOME"/.config
 
-source "./config-menu.sh"
-
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
 }
