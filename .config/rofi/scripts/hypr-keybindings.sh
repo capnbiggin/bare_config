@@ -1,11 +1,7 @@
-#!usr/bin/env bash
-
-# Rofi Path
-ROFI_LAUNCHER="$HOME/.config/rofi/launchers/type-1"
-LAUNCHER_THEME="/style-3"
+#!/bin/bash
 
 # Path to Hyprland config file
-CONFIG="$HOME/.config/hypr/modules/binds.conf"
+CONFIG="$HOME/.config/hypr/modules/hyprbinds.conf"
 
 # Check if config file exists
 if [[ ! -f "$CONFIG" ]]; then
