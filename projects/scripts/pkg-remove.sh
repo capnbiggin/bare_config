@@ -2,7 +2,7 @@
 
 source "${HOME}"/projects/scripts/lib/env.sh
 source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/lib/common.sh
+source "${LIB_DIR}"/common.sh
 
 fzf_args=(
   --multi

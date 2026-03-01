@@ -2,7 +2,7 @@
 
 source "${HOME}"/projects/scripts/lib/env.sh
 source "${LIB_DIR}"/colors.sh
-source "${LIB_DIR}"/lib/common.sh
+source "${LIB_DIR}"/common.sh
 
 ICON_DIR="$ACTUAL_HOME/.local/share/applications/icons"
 DESKTOP_DIR="$ACTUAL_HOME/.local/share/applications/"

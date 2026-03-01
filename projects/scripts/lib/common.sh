@@ -2,6 +2,7 @@
 
 source "${HOME}"/projects/scripts/lib/env.sh
 source "${LIB_DIR}"/colors.sh
+source "${LIB_DIR}"/common.sh
 
 # Logging functions
 log_info() {
