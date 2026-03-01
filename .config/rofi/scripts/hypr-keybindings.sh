@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to Hyprland config file
-CONFIG="$HOME/.config/hypr/modules/hyprbinds.conf"
+CONFIG="$HOME/.config/hypr/modules/binds.conf"
 
 # Check if config file exists
 if [[ ! -f "$CONFIG" ]]; then
