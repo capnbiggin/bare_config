@@ -6,7 +6,10 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 ROFI_DIR="$ACTUAL_HOME"/.config/rofi
+ROFI_SCRIPTS_DIR="$ACTUAL_HOME"/.config/rofi/scripts
 CONFIG_DIR="$ACTUAL_HOME"/.config
+
+source "./config-menu.sh"
 
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
@@ -18,13 +21,6 @@ terminal() {
 
 browser() {
   setsid google-chrome-stable --new-window --app="$1"
-}
-
-configs_menu() {
-  case $(menu "Config" " Ghostty\n Hyprland\n Niri\n Oh-My-Posh\n Picom\n Rofi\n Aliases\n Tmux\n Waybar\n Waypaper\n Yazi\n ZSH") in
-  *Ghostty*) ghostty --class=capn.config -e nvim "$CONFIG_DIR/ghostty/config" ;;
-  *) main_menu ;;
-  esac
 }
 
 remove_menu() {
@@ -46,7 +42,7 @@ install_menu() {
 
 learn_menu() {
   case $(menu "Learn" " Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
-  *Keybindings*) "$ROFI_DIR"/scripts/hypr-keybindings.sh ;;
+  *Keybindings*) "$ROFI_SCRIPTS_DIR"/rofi_hyprbinds.sh ;;
   *Hyprland*) browser "https://wiki.hypr.land/" & ;;
   *Arch*) browser "https://wiki.archlinux.org/title/Main_page" & ;;
   *Bash*) browser "https://devhints.io/bash" & ;;
@@ -67,9 +63,9 @@ system_menu() {
 
 tmux_sessions() {
   case $(menu "Tmux Sessions" "  Project\n  Tmux_Sessions\n  Kill_Tmux_Session") in
-  *Project*) "$ROFI_DIR"/scripts/projects_menu.sh ;;
-  *Tmux_Sessions*) "$ROFI_DIR"/scripts/tmux_sessions.sh ;;
-  *Kill_Tmux_Session*) "$ROFI_DIR"/scripts/kill_tmux_sessions.sh ;;
+  *Project*) "$ROFI_SCRIPTS_DIR"/projects_menu.sh ;;
+  *Tmux_Sessions*) "$ROFI_SCRIPTS_DIR"/tmux_sessions.sh ;;
+  *Kill_Tmux_Session*) "$ROFI_SCRIPTS_DIR"/kill_tmux_sessions.sh ;;
   esac
 }
 
@@ -77,7 +73,7 @@ main_menu() {
   case $(menu "Start" " Apps\n  Tmux\n Configs\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
   *Apps*) "$ROFI_DIR"/launchers/launcher-1.sh ;;
   *Tmux*) tmux_sessions ;;
-  *Configs*) configs_menu ;;
+  *Configs*) "$ROFI_SCRIPTS_DIR"/config-menu.sh ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;
