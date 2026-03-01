@@ -74,7 +74,7 @@ tmux_sessions() {
 }
 
 main_menu() {
-  case $(menu "Start" " Apps\n  Tmux\n Configs󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
+  case $(menu "Start" " Apps\n  Tmux\n Configs\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
   *Apps*) "$ROFI_DIR"/launchers/launcher-1.sh ;;
   *Tmux*) tmux_sessions ;;
   *Configs*) configs_menu ;;
