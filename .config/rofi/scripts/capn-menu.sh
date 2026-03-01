@@ -22,7 +22,7 @@ browser() {
 
 configs_menu() {
   case $(menu "Config" " Ghostty\n Hyprland\n Niri\n Oh-My-Posh\n Picom\n Rofi\n Aliases\n Tmux\n Waybar\n Waypaper\n Yazi\n ZSH") in
-  *Ghostty*) ghostty -e zsh -c "$(CONFIG)/ghostty/config" ;;
+  *Ghostty*) ghostty -e bash -c "$(CONFIG)/ghostty/config" ;;
   *) main_menu ;;
   esac
 }
