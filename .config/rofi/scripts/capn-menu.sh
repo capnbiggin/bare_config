@@ -6,7 +6,7 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 ROFI_DIR="$ACTUAL_HOME"/.config/rofi
-CONFIG="$ACTUAL_HOME"/.config
+CONFIG_DIR="$ACTUAL_HOME"/.config
 
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
@@ -22,7 +22,7 @@ browser() {
 
 configs_menu() {
   case $(menu "Config" " Ghostty\n Hyprland\n Niri\n Oh-My-Posh\n Picom\n Rofi\n Aliases\n Tmux\n Waybar\n Waypaper\n Yazi\n ZSH") in
-  *Ghostty*) ghostty -e bash -c $(cd "$CONFIG"/ghostty/config) ;;
+  *Ghostty*) ghostty --class=capn.config -e nvim "$CONFIG_DIR/ghostty/config" ;;
   *) main_menu ;;
   esac
 }
@@ -46,7 +46,7 @@ install_menu() {
 
 learn_menu() {
   case $(menu "Learn" " Keybindings\n  Hyprland\n󰣇  Arch\n  Neovim\n󱆃  Bash") in
-  *Keybindings*) "$SCRIPTS_DIR"/rofi-scripts/hypr-keybindings.sh ;;
+  *Keybindings*) "$ROFI_DIR"/scripts/hypr-keybindings.sh ;;
   *Hyprland*) browser "https://wiki.hypr.land/" & ;;
   *Arch*) browser "https://wiki.archlinux.org/title/Main_page" & ;;
   *Bash*) browser "https://devhints.io/bash" & ;;
