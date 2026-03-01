@@ -38,7 +38,7 @@ get_keybindings() {
 # Create rofi menu
 show_menu() {
   # Get keybindings and pipe to rofi
-  get_keybindings | sort | rofi -dmenu -i -p "Hyprland Keybindings"
+  get_keybindings | sort | rofi -dmenu -theme "~/.config/rofi/launchers/type-1/style-3.rasi" -i -p "Hyprland Keybindings"
 }
 
 # Execute
