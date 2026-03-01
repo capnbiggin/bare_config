@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-source ."${SCRIPTS_DIR}"/lib/colors.sh
+source "${HOME}"/projects/scripts/lib/env.sh
+source "${LIB_DIR}"/colors.sh
 
 # Logging functions
 log_info() {
