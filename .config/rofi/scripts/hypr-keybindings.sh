@@ -1,4 +1,8 @@
-#!/bin/bash
+#!usr/bin/env bash
+
+# Rofi Path
+ROFI_LAUNCHER="$HOME/.config/rofi/launchers/type-1"
+LAUNCHER_THEME="/style-3"
 
 # Path to Hyprland config file
 CONFIG="$HOME/.config/hypr/modules/binds.conf"
