@@ -6,6 +6,7 @@ ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
 SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 ROFI_DIR="$ACTUAL_HOME"/.config/rofi
+CONFIG="$ACTUAL_HOME"/.config
 
 menu() {
   echo -e "$2" | rofi -dmenu -p "$1…"
@@ -17,6 +18,13 @@ terminal() {
 
 browser() {
   setsid google-chrome-stable --new-window --app="$1"
+}
+
+configs_menu() {
+  case $(menu "Config" " Ghostty\n Hyprland\n Niri\n Oh-My-Posh\n Picom\n Rofi\n Aliases\n Tmux\n Waybar\n Waypaper\n Yazi\n ZSH") in
+  *Ghostty*) ghostty -e zsh -c "$(CONFIG)/ghostty/config" ;;
+  *) main_menu ;;
+  esac
 }
 
 remove_menu() {
@@ -66,9 +74,10 @@ tmux_sessions() {
 }
 
 main_menu() {
-  case $(menu "Start" " Apps\n  Tmux\n󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
+  case $(menu "Start" " Apps\n  Tmux\n Configs󰉉  Install\n󰉉  Uninstall\n󰧑  Learn\n  System\n- About") in
   *Apps*) "$ROFI_DIR"/launchers/launcher-1.sh ;;
   *Tmux*) tmux_sessions ;;
+  *Configs*) configs_menu ;;
   *Install*) install_menu ;;
   *Uninstall*) remove_menu ;;
   *Learn*) learn_menu ;;
