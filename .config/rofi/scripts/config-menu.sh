@@ -1,11 +1,10 @@
-#!/usr/bin/aainfoenv bash
+#!/usr/bin/env bash
 
 ACTUAL_USER="${SUDO_USER:-$USER}"
 ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
-SCRIPTS_DIR="$ACTUAL_HOME"/projects/scripts
 ROFI_DIR="$ACTUAL_HOME"/.config/rofi
-ROFI_SCRIPTS_DIR="$ACTUAL_HOME"/.config/rofi/scripts
+ROFI_SCRIPTS_DIR="$ROFI_DIR"/scripts
 CONFIG_DIR="$ACTUAL_HOME"/.config
 
 menu() {
@@ -65,13 +64,13 @@ configs_menu() {
   *Niri*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/niri/config.kdl ;;
   *Oh-My-Posh*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/oh-my-posh/myprompt.toml ;;
   *Picom*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/picom/picom.conf ;;
-  *Rofi*) ;;
+  #*Rofi*) ;;
   *Aliases*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/shell/aliases.sh ;;
   *Tmux*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/tmuxs/tmux.conf ;;
-  *Waybar*) ;;
+  #*Waybar*) ;;
   *Waypaper*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/waypaper/config.ini ;;
   *Yazi*) ghostty --class=capn.config -e nvim "$CONFIG_DIR"/yazi/theme.toml ;;
-  *ZSH*) ;;
+  *ZSH*) zsh_configs ;;
   *) "$ROFI_SCRIPTS_DIR"/capn-menu.sh ;;
   esac
 }
