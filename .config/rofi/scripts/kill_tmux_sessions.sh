@@ -5,7 +5,7 @@ set -eu
 # A simple script to kill a new tmux session using rofi.
 
 terminal() {
-  ghostty --class=capndot.menu -e bash -c "$1"
+  ghostty --class=capn.menu -e bash -c "$1"
 }
 
 # Function to list tmux sessions
