@@ -13,6 +13,8 @@ input {
         }
         // Enable numlock on startup, omitting this setting disables it.
         numlock
+        repeat-rate 100
+        repeat-delay 300
     }
 
     touchpad {
@@ -107,7 +109,7 @@ layout {
 ///////////////
 // Autostart //
 ///////////////
-// spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "qs" "-c" "noctalia-shell"
 // spawn-at-startup "waybar"
 // spawn-at-startup "dms" "run"
 spawn-at-startup "waypaper" "--backend" "swww" "--restore"
