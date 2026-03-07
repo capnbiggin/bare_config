@@ -7,7 +7,6 @@ source "${LIB_DIR}"/common.sh
 # Install Directory
 INSTALL_DIR="$SCRIPTS_DIR"/install
 
-source "$SCRIPTS_DIR"/lib/common.sh
 source "$INSTALL_DIR"/packages.conf
 
 for pak in "${NIRI[@]}"; do
