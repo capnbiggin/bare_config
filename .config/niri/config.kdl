@@ -251,6 +251,9 @@ binds {
     Mod+CTRL+W hotkey-overlay-title="Run an Application: Google Chrome" { spawn "google-chrome-stable"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
+    Mod+B hotkey-overlay-title="Toggle Noctual" { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
+    Mod+CTRL+B hotkey-overlay-title="Toggle Waybar" { spawn-sh "~/.config/waybar/scripts/launcher.sh"; }
+
     // Menu keybinds
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun -show-icons -display-drun ' Applications:'"; }
     Mod+ALT+RETURN hotkey-overlay-title="Run an Application: rofi" { spawn-sh "~/.config/rofi/launchers/launcher-1.sh"; }
