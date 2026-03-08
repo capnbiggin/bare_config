@@ -3,6 +3,8 @@
 ////////////////////////////////// 
 prefer-no-csd
 
+
+
 ///////////
 // Input //
 ///////////
@@ -34,6 +36,9 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
+
+
+
 //////////////
 // Gestures //
 //////////////
@@ -43,6 +48,9 @@ gestures {
   }
 }
 
+
+
+
 ////////////////
 // Workspaces //
 ////////////////
@@ -50,6 +58,9 @@ gestures {
 // workspace "2"
 // workspace "3"
 // workspace "4"
+
+
+
 
 ///////////////////////
 // Displays/monitors //
@@ -98,6 +109,10 @@ output "eDP-2" {
     }
 }
 
+
+
+
+
 ////////////
 // Layout //
 ////////////
@@ -142,6 +157,10 @@ layout {
     }
 }
 
+
+
+
+
 ///////////////
 // Autostart //
 ///////////////
@@ -158,16 +177,27 @@ hotkey-overlay {
     // skip-at-startup
 }
 
+
+
+
+
 //////////////////////
 // Screenshoot Path //
 //////////////////////
 screenshot-path "~/Pictures/captures/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+
 
 ////////////////
 // Animations //
 ////////////////
 animations {
 }
+
+
+
+
 
 //////////////////
 // Window Rules //
@@ -177,57 +207,26 @@ window-rule {
     default-column-width {}
 }
 
-// ghostty Window Rules
-// window-rule {
-//   match app-id="com.mitchellh.ghostty"
-//   default-column-width { proportion 0.33333; }
-// }
-
-// capndot.menu
+// Floating Windows
 window-rule {
   match app-id="^capn.menu.window$"
   match app-id="^waypaper$"
   match app-id="^org.gnome.Nautilus$"
-  match app-id="^thunar$"
   match app-id="^blueberry.py$"
   match app-id="^wdisplays$"
   match app-id="^org.pulseaudio.pavucontrol$"
   
+  match app-id="thunar"
+  default-column-width { proportion 0.5; }
+  default-window-height { fixed 600; }
 
   open-floating true
 }
 
-// Google Chrome Window Rules
-// window-rule {
-//   match app-id="google-chrome"
-//   default-column-width { proportion 0.66667; }
-// }
-
-// Obsidian
-// window-rule {
-//   match app-id="obsidian"
-//   default-column-width { proportion 0.66667; }
-// }
-
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
-    // This app-id regular expression will work for both:
-    // - host Firefox (app-id is "firefox")
-    // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
-}
-
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-    match app-id=r#"^org\.gnome\.World\.Secrets$"#
-
-    block-out-from "screen-capture"
-
-    // Use this instead if you want them visible on third-party screenshot tools.
-    // block-out-from "screencast"
 }
 
 // Example: enable rounded corners for all windows.
@@ -236,6 +235,10 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+
+
+
 
 /////////////////
 // Keybindings //
