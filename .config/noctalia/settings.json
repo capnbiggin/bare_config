@@ -193,7 +193,7 @@
                     "showTextTooltip": true,
                     "textCollapse": "",
                     "textCommand": "~/.config/waybar/scripts/update module",
-                    "textIntervalMs": 3600,
+                    "textIntervalMs": 36000,
                     "textStream": false,
                     "wheelDownExec": "",
                     "wheelDownUpdateText": false,
@@ -404,6 +404,7 @@
         "clockStyle": "custom",
         "compactLockScreen": false,
         "dimmerOpacity": 0.2,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
@@ -624,7 +625,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 55,
+    "settingsVersion": 56,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,
