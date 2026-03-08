@@ -1,4 +1,9 @@
 {
+   "include": [
+      "~/.config/waybar/modules/*.jsonc"
+   ],
+
+
    "layer": "top",
    "modules-center": ["clock", "niri/workspaces", "battery"],
    "sway/window": {
@@ -10,19 +15,5 @@
    },
    "clock": {
        "format-alt": "{:%a, %d. %b  %H:%M}"
-   },
-  "niri/workspaces": {
-   	"format": "{icon}",
-   	"format-icons": {
-   		// Named workspaces
-   		// (you need to configure them in niri)
-   		"browser": "",
-   		"discord": "",
-   		"chat": "<b></b>",
-   
-   		// Icons by state
-   		"active": "",
-   		"default": ""
-   	}
-  }
+   }
 }
