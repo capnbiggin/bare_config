@@ -1,0 +1,15 @@
+{
+    "include": [
+        "~/.config/waybar/modules/custom/extras/*.jsonc",
+        "~/.config/waybar/modules/custom/hardware/*jsonc"
+    ],
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": [
+            "memory",
+            "temperature"
+        ]
+    }
+
+}

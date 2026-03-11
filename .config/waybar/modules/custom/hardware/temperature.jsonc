@@ -4,11 +4,11 @@
     // "hwmon-path":
     // "hwmon-path-abs":
     // "input-filename":
-    // "warning-threshold":
+    "warning-threshold": 80,
     "critical-threshold": 90,
     "interval": 10,
-    // "format-warning":
-    "format-critical": "󰀦 {temperatureC}°C",
+    "format-warning": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
     "format-icons": ["󱃃", "󰔏", "󱃂"],
     // "rotate":
@@ -24,10 +24,10 @@
     // "on-scroll-down":
     // "smooth-scrolling-threshold":
     // "tooltip":
-    "tooltip-format": "Fahrenheit: {temperatureF}°F",
+    "tooltip-format": "Fahrenheit: {temperatureF}°F"
     // "menu":
     // "menu-file":
     // "menu-actions":
     // "expand":
-  },
+  }
 }

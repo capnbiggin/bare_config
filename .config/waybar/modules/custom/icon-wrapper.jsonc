@@ -1,0 +1,16 @@
+{
+    "include": [
+        "~/.config/waybar/modules/custom//extras/*.jsonc",
+        "~/.config/waybar/modules/custom/icon-wrapper/*jsonc"
+    ],
+
+    "group/icon-wrapper": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "battery",
+            "custom/notification"
+        ]
+    }
+
+}

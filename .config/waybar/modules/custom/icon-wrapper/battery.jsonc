@@ -6,15 +6,17 @@
 		// "full-at":
 		// "interval":
 		"states": {
-			"warning": 20,
-			"critical": 10
+			"warning": 30,
+			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
+		"format": "{icon}",
 		"format-time": "{H}h {M}min",
-		"format-icons": [
-			"󰂎", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-		],
-		"format-charging": "󰉁 {capacity}%",
+		"format-icons": {
+           "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+           "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+		   "plugged": ""
+        },
+		// "format-charging": "󰉁 {capacity}%",
 		// "min-length": 7,
 		// "max-length": 7,
 		// "align":
@@ -27,9 +29,10 @@
 		// "on-scroll-up":
 		// "on-scroll-down":
 		// "smooth-scrolling-threshold":
-		// "tooltip":
-		// "tooltip-format": "<b>Discharging</b>: {time}",
-		// "tooltip-format-charging": "<b>Charging</b>: {time}",
+		// "tooltip": "{capacity}%",
+		"tooltip-format": "{capacity}% <b>Discharging</b>: {time}",
+		"tooltip-format-charging": "<b>Charging</b>: {time}",
+		"tooltip-format-plugged": "<b>Plugged In</b>",
 		// "weighted-average":
 		// "bat-compatibility":
 		// "menu":
@@ -43,3 +46,15 @@
 		}
 	}
 }
+
+
+
+// "battery": {
+//     "bat": "BAT2",
+//     "interval": 60,
+//     "format": "{capacity}% {icon}",
+//     "format-icons": {
+//         "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+//         "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+//     },
+// }
