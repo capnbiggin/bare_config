@@ -8,7 +8,9 @@
         "orientation": "horizontal",
         "modules": [
             "pulseaudio",
+            "custom/seperator",
             "battery",
+            "custom/seperator",
             "custom/notification"
         ]
     }

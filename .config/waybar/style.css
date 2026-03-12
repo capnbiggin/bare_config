@@ -1,5 +1,7 @@
 @import "colors.css";
 
+
+
 * {
     all: unset;
     font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo";
@@ -46,6 +48,7 @@
 }
 
 
+
 /* --- GROUPS --- */
 
 /*-------------
@@ -66,6 +69,12 @@
 #battery {
     margin-right: 4px;
     margin-left: 4px;
+}
+#battery.warning {
+    color: @yellow;
+}
+#battery.critical {
+    color: @red;
 }
 
 #custom-notification {
@@ -99,8 +108,12 @@
     margin-left: 4px;
 }
 
-
-
+/* ----------
+  seprtator
+-----------*/
+#custom-seperator {
+    color: @grey0;
+}
 
 /* --- TOOLTIP --- */
 

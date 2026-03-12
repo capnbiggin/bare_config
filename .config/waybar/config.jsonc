@@ -3,7 +3,8 @@
     "~/.config/waybar/modules/*.jsonc",
 	"~/.config/waybar/modules/custom/*jsonc",
 	"~/.config/waybar/modules/custom/icon-wrapper/*jsonc",
-	"~/.config/waybar/modules/custom/hardware/*.jsonc"
+	"~/.config/waybar/modules/custom/hardware/*.jsonc",
+	"~/.config/waybar/modules/extras/*.jsonc"
   ],
 
 
