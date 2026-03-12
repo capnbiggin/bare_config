@@ -1,55 +1,53 @@
 {
   "include": [
     "~/.config/waybar/modules/*.jsonc",
-	"~/.config/waybar/modules/custom/*jsonc",
-	"~/.config/waybar/modules/custom/icon-wrapper/*jsonc",
-	"~/.config/waybar/modules/custom/hardware/*.jsonc",
-	"~/.config/waybar/modules/extras/*.jsonc"
+    "~/.config/waybar/modules/custom/*jsonc",
+    "~/.config/waybar/modules/custom/icon-wrapper/*jsonc",
+    "~/.config/waybar/modules/custom/hardware/*.jsonc",
+    "~/.config/waybar/modules/extras/*.jsonc",
   ],
-
 
   /*-----------
      layout
   -----------*/
 
   "modules-center": [
-	"group/hardware",
-	"clock#date",
+    "group/hardware",
+    "clock#date",
     "niri/workspaces",
-	"clock#time",
-	"group/icon-wrapper"
+    "clock#time",
+    "group/icon-wrapper",
   ],
-
 
   /*-----------
      options
   -----------*/
 
   // "expand-center":
-	// "expand-left":
-	// "expand-right":
-	"layer": "top",
-	// "output":
-	// "position":
-	// "height": 0,
-	// "width": 0,
-	// "margin": 0,
-	// "margin-top":
-	// "margin-left":
-	// "margin-bottom":
-	// "margin-right":
-	// "no-center":
-	// "spacing": 18,
-	// "name":
-	// "mode": "dock",
-	// "start_hidden":
-	// "modifier-reset":
-	// "exclusive":
-	// "fixed-center":
-	// "passthrough":
-	// "ipc":
-	// "id":
-	"reload_style_on_change": true
-	// "on-sigusr1":
-	// "on-sigusr2":
+  // "expand-left":
+  // "expand-right":
+  "layer": "top",
+  // "output":
+  // "position":
+  // "height": 0,
+  // "width": 0,
+  // "margin": 0,
+  // "margin-top":
+  // "margin-left":
+  // "margin-bottom":
+  // "margin-right":
+  // "no-center":
+  // "spacing": 18,
+  // "name":
+  // "mode": "dock",
+  // "start_hidden":
+  // "modifier-reset":
+  // "exclusive":
+  // "fixed-center":
+  // "passthrough":
+  // "ipc":
+  // "id":
+  "reload_style_on_change": true,
+  // "on-sigusr1":
+  // "on-sigusr2":
 }

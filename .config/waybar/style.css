@@ -1,130 +1,75 @@
 @import "colors.css";
 
-
-
 * {
-    all: unset;
-    font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo";
+  all: unset;
+  font-family: "Google Sans Flex", "JetBrainsMono Nerd Font Propo";
 }
 
 .modules-center {
-    color: @fg;
-    background-color: @bg0;
-    margin: 5 0 0 0;
-    padding: 6 10;
-    border-radius: 10px;
+  color: @fg;
+  background-color: @bg0;
+  margin: 5 0 0 0;
+  padding: 6 10;
+  border-radius: 10px;
 }
 
-/*-----------
-  wokspaces
------------*/
-#workspaces {
-    background-color: @bg2;
-    padding: 3 6 ;
-    border-radius: 6px;
-    margin: 0 5;
+/* --- module commons ---*/
+#workspaces,
+#clock,
+#icon-wrapper,
+#hardware {
+  background-color: @bg2;
+  border-radius: 6px;
+  padding: 3 6;
+  margin: 0 5;
 }
+
+/* --- wokspaces buttons --- */
 #workspaces button {
-    color: @bg0;
-    background-color: @blue;
-    padding: 0 3;
-    margin: 1 2;
-    border-radius: 4px;
+  color: @fg;
+  background-color: @bg4;
+  padding: 0 3;
+  margin: 1 2;
+  border-radius: 4px;
+  min-width: 10px;
 }
 #workspaces button.active {
-    background-color: @purple;
-    padding: 0 6;
+  color: @bg0;
+  background-color: @purple;
+  padding: 0 8;
 }
 
-/*-------
-  clock
--------*/
-#clock {
-    background-color: @bg2;
-    border-radius: 6px;
-    font-weight: 500;
-    padding: 3 6;
-    margin: 0 4;
-}
-
-
-
-/* --- GROUPS --- */
-
-/*-------------
-  icon-wraper
--------------*/
-#icon-wrapper {
-    background-color: @bg2;
-    border-radius: 6px;
-    padding: 3 6;
-    margin: 0 4;
-}
-
-#pulseaudio {
-    margin-right: 4px;
-    margin-left: 4px;
-}
-
-#battery {
-    margin-right: 4px;
-    margin-left: 4px;
-}
-#battery.warning {
-    color: @yellow;
-}
-#battery.critical {
-    color: @red;
-}
-
-#custom-notification {
-    margin-right: 4px;
-    margin-left: 4px;
-}
-
-/*----------
-  hardware
-----------*/
-#hardware {
-    background-color: @bg2;
-    border-radius: 6px;
-    padding: 3 6;
-    margin: 0 4;
-}
-
-#temperature {
-    margin-right: 4px;
-    margin-left: 4px;
-}
-#temperature.warning {
-    color: @yellow;
-}
-#temperature.critical {
-    color: @red;
-}
-
+/* --- wrapper commons --- */
+#network,
+#pulseaudio,
+#battery,
+#custom-notification,
+#temperature,
 #memory {
-    margin-right: 4px;
-    margin-left: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+#battery.warning,
+#temperature.warning {
+  color: @yellow;
+}
+#battery.critical,
+#temperature.critical {
+  color: @red;
 }
 
-/* ----------
-  seprtator
------------*/
+/* --- seprtator --- */
 #custom-seperator {
-    color: @grey0;
+  color: @bg4;
+  padding: 0 1;
 }
 
-/* --- TOOLTIP --- */
-
-/*---------
-  tooltip
----------*/
+/* --- tooltip --- */
 tooltip {
-    border: 2px solid @bg4;
-    border-radius: 10px;
-    background-color: @bg1;
+  border: 2px solid @bg4;
+  border-radius: 10px;
+  background-color: @bg1;
 }
 tooltip > box {
-    padding: 5px 8px;
+  padding: 5px 8px;
 }

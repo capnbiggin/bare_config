@@ -7,6 +7,8 @@
     "group/icon-wrapper": {
         "orientation": "horizontal",
         "modules": [
+            "network",
+            "custom/seperator",
             "pulseaudio",
             "custom/seperator",
             "battery",
