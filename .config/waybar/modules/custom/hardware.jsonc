@@ -1,16 +1,17 @@
 {
-    "include": [
-        "~/.config/waybar/modules/custom/extras/*.jsonc",
-        "~/.config/waybar/modules/custom/hardware/*jsonc"
+  "include": [
+    "~/.config/waybar/modules/custom/extras/*.jsonc",
+    "~/.config/waybar/modules/custom/hardware/*jsonc",
+  ],
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "memory",
+      "custom/seperator",
+      "cpu",
+      "custom/seperator",
+      "temperature",
     ],
-
-    "group/hardware": {
-        "orientation": "horizontal",
-        "modules": [
-            "memory",
-            "custom/seperator",
-            "temperature"
-        ]
-    }
-
+  },
 }

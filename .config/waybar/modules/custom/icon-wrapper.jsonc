@@ -1,20 +1,21 @@
 {
-    "include": [
-        "~/.config/waybar/modules/custom//extras/*.jsonc",
-        "~/.config/waybar/modules/custom/icon-wrapper/*jsonc"
+  "include": [
+    "~/.config/waybar/modules/custom//extras/*.jsonc",
+    "~/.config/waybar/modules/custom/icon-wrapper/*jsonc",
+  ],
+
+  "group/icon-wrapper": {
+    "orientation": "horizontal",
+    "modules": [
+      "network",
+      "custom/seperator",
+      "pulseaudio",
+      "custom/seperator",
+      "battery",
+      "custom/seperator",
+      "power-profiles-daemon",
+      "custom/seperator",
+      "custom/notification",
     ],
-
-    "group/icon-wrapper": {
-        "orientation": "horizontal",
-        "modules": [
-            "network",
-            "custom/seperator",
-            "pulseaudio",
-            "custom/seperator",
-            "battery",
-            "custom/seperator",
-            "custom/notification"
-        ]
-    }
-
+  },
 }

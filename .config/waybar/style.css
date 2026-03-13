@@ -21,7 +21,7 @@
   background-color: @bg2;
   border-radius: 6px;
   padding: 3 6;
-  margin: 0 5;
+  margin: 0 6;
 }
 
 /* --- wokspaces buttons --- */
@@ -45,7 +45,9 @@
 #battery,
 #custom-notification,
 #temperature,
-#memory {
+#memory,
+#cpu,
+#power-profiles-daemon {
   margin-right: 4px;
   margin-left: 4px;
 }
