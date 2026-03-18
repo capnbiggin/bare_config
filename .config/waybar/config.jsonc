@@ -14,7 +14,7 @@
   "modules-center": [
     "group/hardware",
     "clock#date",
-    "hyprland/workspaces",
+    "niri/workspaces",
     "clock#time",
     "group/icon-wrapper",
   ],
