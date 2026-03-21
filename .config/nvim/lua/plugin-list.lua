@@ -1,7 +1,7 @@
 return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
-    { "nvim-treesitter/nvim-treesitter", branch = "master" },
+    { "nvim-treesitter/nvim-treesitter",             branch = "master" },
     { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
     "nvim-treesitter/nvim-treesitter-context",
     "hrsh7th/nvim-cmp",
@@ -19,4 +19,6 @@ return {
     "ojroques/vim-oscyank",
     "kkoomen/vim-doge",
     "captbaritone/better-indent-support-for-php-with-html",
+    "folke/which-key.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
 }
