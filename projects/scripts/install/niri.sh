@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-source "${HOME}"/projects/scripts/lib/env.sh
+SCRIPTS_DIR="${HOME}"/projects/scripts
+INSTALL_DIR="$SCRIPTS_DIR"/install
+
+source "${SCRIPTS_DIR}"/lib/env.sh
 source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
 #
 # Install Directory
-INSTALL_DIR="$SCRIPTS_DIR"/install
 
 source "$INSTALL_DIR"/packages.conf
 
