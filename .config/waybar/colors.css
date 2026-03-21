@@ -1,22 +1,21 @@
-/* tokyonight-night color theme */
+/* catppuccin-mocah color theme */
 
-@define-color bg0 #1a1b26;
-@define-color bg1 #1f2231;
-@define-color bg2 #323449;
-@define-color bg3 #414868;
-@define-color bg4 #737aa2;
+@define-color bg0 #181825;
+@define-color bg1 #1e1e2e;
+@define-color bg2 #313244;
+@define-color bg3 #45475a;
+@define-color bg4 #585b70;
 
-@define-color fg #e9e9ed;
+@define-color fg #cdd6f4;
 
-@define-color red #f7768e;
-@define-color pink #ff007c;
-@define-color orange #ff9e64;
-@define-color yellow #e0af68;
-@define-color green #1abc9c;
-@define-color cyan #7dcfff;
-@define-color blue #7aa2f7;
-@define-color purple #bb9af7;
+@define-color red #f38ba8;
+@define-color orange #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color cyan #89dceb;
+@define-color blue #89b4fa;
+@define-color purple #cba6f7;
 
-@define-color grey0 #a9b1d6;
-@define-color grey1 #b6b8cd;
-@define-color grey2 #d2d2da;
+@define-color grey0 #6c7086;
+@define-color grey1 #7f849c;
+@define-color grey2 #9399b2;
