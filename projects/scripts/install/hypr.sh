@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-source "${HOME}"/projects/scripts/lib/env.sh
+SCRIPTS_DIR="${HOME}"/projects.scripts
+# Install Directory
+INSTALL_DIR="${SCRIPTS_DIR}"/install
+
+source "${SCRIPTS_DIR}"/lib/env.sh
 source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
 
-# Install Directory
-INSTALL_DIR="$SCRIPTS_DIR"/install
 
-source "$SCRIPTS_DIR"/lib/common.sh
 source "$INSTALL_DIR"/packages.conf
 
 for pak in "${HYPR[@]}"; do

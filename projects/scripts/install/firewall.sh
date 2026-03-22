@@ -10,6 +10,11 @@ if ! command -v ufw &>/dev/null; then
   # Allow ports for LocalSend
   sudo ufw allow 53317/udp
   sudo ufw allow 53317/tcp
+  
+  # Allow ports for Astro
+  sudo ufw allow 4321/udp
+  sudo ufw allow 4321/tcp
+
 
   # Allow SSH in
   sudo ufw allow 22/tcp
