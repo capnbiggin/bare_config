@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-WALL_DIR="$HOME/Pictures/Wallpapers"
+WALL_DIR="$HOME/Pictures/wallpapers"
 CACHE_DIR="$HOME/.cache/thumbnails/large"  # Standard XDG thumbnail cache
 
 # Ensure thumbnail cache exists
@@ -14,7 +14,7 @@ find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' 
     done |
     rofi -dmenu \
          -show-icons \
-         -theme ~/.config/rofi/wallpaper-selector.rasi \
+         -theme ~/.config/rofi/launchers/type-2/style-13.rasi \
          -p "Select Wallpaper" |
     while read -r selected; do
         if [[ -n "$selected" ]]; then
