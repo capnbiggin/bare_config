@@ -20,7 +20,7 @@ find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' 
         if [[ -n "$selected" ]]; then
             full_path="$WALL_DIR/$selected"
             # Set wallpaper with swww (smooth transition)
-            swww img "$full_path" --transition-type center --transition-fps 60 --transition-duration 1
+            awww img "$full_path" --transition-type center --transition-fps 60 --transition-duration 1
 
             # Regenerate colors with matugen
             matugen image "$full_path"
