@@ -23,7 +23,7 @@ find "$WALL_DIR" -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' 
             awww img "$full_path" --transition-type center --transition-fps 60 --transition-duration 1
 
             # Regenerate colors with matugen
-            matugen image "$full_path"
+            # matugen image "$full_path"
 
             # Optional: force reload apps if needed (kitty/gtk/hyprland already in your config)
             # pkill -USR1 kitty  # Example for kitty if reload_apps doesn't catch it
