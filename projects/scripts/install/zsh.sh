@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-source "${HOME}"/projects/scripts/lib/env.sh
+# Set Actual Home
+ACTUAL_USER="${SUDO_USER:-$USER}"
+ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
+
+# Directory's
+SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+LIB_DIR="${SCRIPTS_DIR}/lib"
+CONFIG_DIR="${ACTUAL_HOME}"/.config
+
 source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
-
-# Config Directory
-CONFIG_DIR="$ACTUAL_HOME"/.config
-
-source "$SCRIPTS_DIR/lib/common.sh"
 
 log_info "\nInstalling Z Shell./n"
 sudo pacman -S --needed --noconfirm zsh which
@@ -18,7 +21,7 @@ hash -r
 chsh -s $(which zsh)
 
 # Make Directory for zsh config and plugins
-mkdir -p "$CONFIG_DIR"/zsh/plugins
+mkdir -p "${CONFIG_DIR}"/zsh/plugins
 
 log_info "\nCloning plugin zsh-syntax-highlighting.\n"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting/

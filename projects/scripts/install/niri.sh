@@ -1,12 +1,17 @@
 #!/usr/bin/env bash
 
-SCRIPTS_DIR="${HOME}"/projects/scripts
-INSTALL_DIR="$SCRIPTS_DIR"/install
+# Set Actual Home
+ACTUAL_USER="${SUDO_USER:-$USER}"
+ACTUAL_HOME=$(eval echo "~$ACTUAL_USER")
 
-source "${SCRIPTS_DIR}"/lib/env.sh
+# Script Directory
+SCRIPTS_DIR="${ACTUAL_HOME}/projects/scripts"
+LIB_DIR="${SCRIPTS_DIR}/lib"
+INSTALL_DIR="${SCRIPTS_DIR}"/install
+
 source "${LIB_DIR}"/colors.sh
 source "${LIB_DIR}"/common.sh
-#
+
 # Install Directory
 
 source "$INSTALL_DIR"/packages.conf
