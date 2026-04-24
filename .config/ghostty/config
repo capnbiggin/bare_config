@@ -10,3 +10,7 @@ background-opacity = 0.9
 
 # Theme
 theme = catppuccin-mocha
+
+# Padding
+window-padding-x = 20
+window-padding-y = 20
