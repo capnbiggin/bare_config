@@ -6,7 +6,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.renderWhitespace": "none",
     "editor.formatOnSave": true,
-    "prettier.tabWidth": 4,
+    "prettier.tabWidth": 2,
     "[astro]": {
         "editor.defaultFormatter": "astro-build.astro-vscode",
     },
