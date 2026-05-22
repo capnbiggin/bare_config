@@ -2,7 +2,7 @@
 
 hl.monitor({
   output   = "desc:LG Electronics LG ULTRAWIDE 0x000357A4",
-  mode     = "2560x1080",
+  mode     = "2560x1080@59.98",
   position  = "0x0",
   scale    = "1",
 })
