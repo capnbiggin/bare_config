@@ -7,7 +7,7 @@ binds {
     Mod+W hotkey-overlay-title="Vivaldi" { spawn "vivaldi"; }
     Mod+SHIFT+W hotkey-overlay-title="Google Chrome" { spawn "google-chrome-stable"; }
     Mod+I hotkey-overlay-title="VS Code" { spawn "code"; }
-    // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+SHIFT+O hotkey-overlay-title="Obsidian" { spawn "obsidian"; }
 
     Mod+B hotkey-overlay-title="Toggle Noctual" { spawn-sh "qs -c noctalia-shell ipc call bar toggle"; }
     Mod+CTRL+B hotkey-overlay-title="Toggle Waybar" { spawn-sh "~/.config/waybar/scripts/launcher.sh"; }
