@@ -1,0 +1,30 @@
+///////////
+// Input //
+///////////
+input {
+    keyboard {
+        xkb {
+            options "numpad:mac,compose:caps"
+        }
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+        repeat-rate 100
+        repeat-delay 300
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+    }
+
+    mouse {
+      accel-speed 0.0
+      accel-profile "flat"
+      scroll-factor 1.0
+    }
+
+    trackpoint {
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
