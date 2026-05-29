@@ -11,7 +11,7 @@ local capn_menu     = "~/.config/rofi/scripts/capn-menu.sh"
 local wallpaper     = "~/.config/rofi/scripts/wallpapers.sh"
 local cliphist      = "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 local waybar_toggle = "~/.config/waybar/scripts/launcher.sh"
--- local capture       = "grim -g "$(slurp)" /home/capn/Pictures/captures/$(date +'%s_grim.png')"
+local capture       = "~/.local/bin/screencap"
 
 -- Sets "Windows" key as main modifier
 local main_mod      = "SUPER"
@@ -33,7 +33,7 @@ hl.bind(main_mod .. " + SHIFT + D", hl.dsp.exec_cmd(capn_menu))
 hl.bind(main_mod .. " + C", hl.dsp.exec_cmd(cliphist))
 
 -- screencap
--- hl.bind(main_mod .. " + SHIFT + C", hl.dsp.exec_cmd(capture))
+hl.bind(main_mod .. " + SHIFT + C", hl.dsp.exec_cmd(capture))
 
 -- QUIT
 hl.bind(main_mod .. " + Q", hl.dsp.window.close())
