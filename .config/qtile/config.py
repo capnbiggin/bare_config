@@ -97,39 +97,6 @@ for i in groups:
             Key(
                 [mod],
                 i.name,
-                lazy.group[i.name].toscreen(),
-                desc=f"Switch to group {i.name}",
-            ),
-            # mod + shift + group number = switch to & move focused window to group
-            Key(
-                [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc=f"Switch to & move focused window to group {i.name}",
-            ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod + shift + group number = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
-        ]
-    )
-
-layout_theme = {
-    "border_width": 2,
-    "margin": 8,
-    "border_focus": "#eba0ac",
-    "border_normal": "#fab387"
-}
-
-layouts = [
-    layout.Columns(**layout_theme),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -181,6 +148,41 @@ screens = [
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
     ),
+    Screen(
+            top=bar.Bar(
+                [
+                    widget.Spacer(length = 8),
+                    widget.GroupBox(),
+                    widget.CurrentLayout(),
+                    widget.Prompt(),
+                    widget.WindowName(),
+                    widget.Chord(
+                        chords_colors={
+                            "launch": ("#ff0000", "#ffffff"),
+                        },
+                        name_transform=lambda name: name.upper(),
+                    ),
+                    widget.Clock(format="%a, %b %d - %H:%M"),
+                    # widget.TextBox("default config", name="default"),
+                    # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                    # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                    # widget.StatusNotifier(),
+                    # widget.Systray(),
+                    # widget.QuickExit(),
+                    widget.Spacer(length = 8),
+                ],
+                24,
+                # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+                # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            ),
+            background="#000000",
+            wallpaper=logo,
+            wallpaper_mode="center",
+            # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
+            # By default we handle these events delayed to already improve performance, however your system might still be struggling
+            # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
+            # x11_drag_polling_rate = 60,
+        ),
 ]
 
 # Drag floating layouts.
