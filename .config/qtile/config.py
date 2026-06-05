@@ -9,16 +9,17 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = "ghostty"
-browser = "vivaldi"
-browser2 = "google-chrome"
+browser = "zen-browser"
+browser2 = "vivaldi"
+browser3 = "google-chrome"
 
 keys = [
     # Basics
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
-    Key([mod, "mod1"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
-    Key([mod, "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh")), desc="Spawn menu launcher"),
-    Key([mod, "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/projects_menu.sh")), desc="Spawn projects launcher"),
+    Key([mod, "mod1"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod, "control"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh")), desc="Spawn menu launcher"),
+    Key([mod, "shift"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/projects_menu.sh")), desc="Spawn projects launcher"),
     Key([mod, "shift", "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/tmux_sessions.sh")), desc="Spawn tmux session launcher"),
     Key([mod, "mod1", "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/kill_tmux_sessions.sh")), desc="Spawn kill tmux session launcher"),
     Key([mod], "v", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/clipboard-history.sh")), desc="Spawn clipboard history"),
