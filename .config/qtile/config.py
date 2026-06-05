@@ -17,15 +17,19 @@ keys = [
     # Basics
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
-    Key([mod, "mod1"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
+    Key([mod], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/launchers/launcher-1.sh")), desc="Spawn rofi launcher"),
     Key([mod, "control"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh")), desc="Spawn menu launcher"),
     Key([mod, "shift"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/projects_menu.sh")), desc="Spawn projects launcher"),
-    Key([mod, "shift", "control"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/tmux_sessions.sh")), desc="Spawn tmux session launcher"),
-    Key([mod, "mod1", "shift"], "Return", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/kill_tmux_sessions.sh")), desc="Spawn kill tmux session launcher"),
+    Key([mod, "shift", "control"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/tmux_sessions.sh")), desc="Spawn tmux session launcher"),
+    Key([mod, "mod1", "shift"], "D", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/kill_tmux_sessions.sh")), desc="Spawn kill tmux session launcher"),
     Key([mod], "v", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/clipboard-history.sh")), desc="Spawn clipboard history"),
+    Key([mod, "mod1"], "W", lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/wallpapers.sh")), desc="Spawn clipboard history"),
 
     Key([mod], "w", lazy.spawn(browser), desc="Launch browser"),
     Key([mod, "shift"], "w", lazy.spawn(browser2), desc="Launch browser"),
+    Key([mod, "control"], "w", lazy.spawn(browser3), desc="Launch browser"),
+
+    Key([mod], "O", lazy.spawn("obsidian"), desc="Launch Obsidian"),
 
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
 
@@ -116,7 +120,7 @@ for i in groups:
 
 layout_theme = {
     "border_width": 2,
-    "margin": 8,
+    "margin": 2,
     "border_focus": "#eba0ac",
     "border_normal": "#fab387"
 }
@@ -146,6 +150,46 @@ extension_defaults = widget_defaults.copy()
 
 logo = os.path.join(os.path.dirname(libqtile.resources.__file__), "logo.png")
 screens = [
+    Screen(
+        top=bar.Bar(
+            [
+                widget.Spacer(length = 10),
+                widget.GroupBox(),
+                widget.CurrentLayout(),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Chord(
+                    chords_colors={
+                        "launch": ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.Clock(format="%a, %b %d - %H:%M"),
+                # widget.TextBox("default config", name="default"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
+                # widget.StatusNotifier(),
+                # widget.Systray(),
+                # widget.QuickExit(),
+                widget.CheckUpdates(
+                    distro="Arch_yay",
+                    no_update_string="No Updates",
+                    colour_have_updates="#d75f5f"
+                    ),
+                widget.Spacer(length = 10),
+            ],
+            24,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+        ),
+        background="#000000",
+        wallpaper=logo,
+        wallpaper_mode="center",
+        # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
+        # By default we handle these events delayed to already improve performance, however your system might still be struggling
+        # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
+        # x11_drag_polling_rate = 60,
+    ),
     Screen(
         top=bar.Bar(
             [
