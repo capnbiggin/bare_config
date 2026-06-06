@@ -6,4 +6,10 @@
 
 picom --daemon &
 sleep 1
-waypaper --backend feh --restore &
+awww-daemon &
+waypaper --backend awww --restore &
+xwayland-satellite &
+swaync &
+/usr/lib/polkit-kde-authentication-agent-1 &
+wl-paste --type text --watch cliphist store &
+wl-paste --type image --watch cliphist store &
