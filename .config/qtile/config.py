@@ -122,7 +122,8 @@ layout_theme = {
     "border_width": 1,
     "margin": 2,
     "border_focus": "#FF9900",
-    "border_normal": "#696969"
+    "border_normal": "#696969",
+    "border_on_single": True
 }
 
 layouts = [
