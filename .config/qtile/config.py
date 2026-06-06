@@ -119,10 +119,10 @@ for i in groups:
     )
 
 layout_theme = {
-    "border_width": 2,
+    "border_width": 1,
     "margin": 2,
-    "border_focus": "#eba0ac",
-    "border_normal": "#fab387"
+    "border_focus": "#FF9900",
+    "border_normal": "#696969"
 }
 
 layouts = [
