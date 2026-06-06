@@ -165,18 +165,23 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Clock(format="%a, %b %d - %H:%M"),
+                widget.CheckUpdates(
+                    distro="Arch_yay",
+                    no_update_string="No Updates",
+                    colour_have_updates="#d75f5f",
+                    padding=5
+                    ),
+                widget.Volume(padding=5, background="#648c11", fmt='VOL:{}'),
+                widget.ThermalSensor(tag_sensor="CPU", format='{tag}:{temp:.0f}{unit}', background="#4169e1", padding=5),
+                widget.Memory(background="#009698", measure_mem="G", format='MEM:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}', padding=5),
+                widget.Clock(format="%a, %b %d", background="#b768a2", padding=5),
+                widget.Clock(format="%I:%M%p", background="#800080", padding=5),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 # widget.Systray(),
                 # widget.QuickExit(),
-                widget.CheckUpdates(
-                    distro="Arch_yay",
-                    no_update_string="No Updates",
-                    colour_have_updates="#d75f5f"
-                    ),
                 widget.Spacer(length = 10),
             ],
             24,
