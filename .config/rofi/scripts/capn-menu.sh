@@ -80,4 +80,15 @@ main_menu() {
   esac
 }
 
-main_menu
+main() {
+  case $1 in
+    power)
+      system_menu
+      ;;
+    *)
+      main_menu
+  esac
+}
+
+main "$@"
+
