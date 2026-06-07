@@ -104,6 +104,8 @@ screens = [
                     padding=5
                     ),
                 widget.Spacer(length = 2),
+                widget.WlanIw(format='{essid} {percent:2.0%}'),
+                widget.Spacer(length = 2),
                 widget.Volume(padding=5, background="#648c11", fmt='VOL:{}'),
                 widget.Spacer(length = 2),
                 widget.ThermalSensor(tag_sensor="CPU", format='{tag}:{temp:.0f}{unit}', background="#4169e1", padding=5),
@@ -115,6 +117,8 @@ screens = [
                 widget.Clock(format="%I:%M%p", background="#800080", padding=5),
                 widget.Spacer(length = 2),
                 widget.TextBox(" ⏻ ", padding=5, background="#8b0000", mouse_callbacks={"Button1": lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh power"))}),
+                widget.Spacer(length = 2),
+                widget.SwayNC(padding=5, fmt=' {}'),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
