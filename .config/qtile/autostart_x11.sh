@@ -7,6 +7,7 @@
 picom --daemon &
 sleep 1
 awww-daemon &
+kanshi &
 waypaper --backend awww --restore &
 xwayland-satellite &
 swaync &
