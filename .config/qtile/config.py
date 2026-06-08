@@ -24,7 +24,7 @@ for vt in range(1, 8):
     )
 
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     keys.extend(
@@ -50,22 +50,35 @@ for i in groups:
         ]
     )
 
+colors=[
+        ['#FFFFFF', '#FFFFFF'], #colors[0]
+        ['#000000', '#000000'], #colors[1]
+        ['#FF9900', '#FF9900'], #colors[2]
+        [], #colors[3]
+        [], #colors[4]
+        [], #colors[5]
+        [], #colors[6]
+        [], #colors[7]
+        ['#696969', '#696969'], #colors[8]
+        ['#404040', '#404040']  #colors[9]
+        ]
+
 layout_theme = {
     "border_width": 1,
     "margin": 2,
-    "border_focus": "#FF9900",
-    "border_normal": "#696969",
+    "border_focus": colors[2],
+    "border_normal": colors[8],
     "border_on_single": True
 }
 
 layouts = [
     layout.Columns(**layout_theme),
-    layout.Max(),
+    layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
+    layout.MonadTall(**layout_theme),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -86,17 +99,35 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length = 10),
-                widget.GroupBox(),
-                widget.CurrentLayout(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
+                widget.Spacer(
+                    length = 10
+                    ),
+                widget.GroupBox(
+                    this_current_screen_border=colors[2],
+                    other_current_screen_border=colors[2],
+                    borderwidth=2
+                    ),
+                widget.TextBox(
+                    text="|", 
+                    padding=2, 
+                    fontsize=14, 
+                    foreground=colors[2]
+                    ),
+                widget.CurrentLayout(mode="icon"),
+                widget.TextBox(
+                    text="|", 
+                    padding=2, 
+                    fontsize=14, 
+                    foreground=colors[2]
+                    ),
+                # widget.Prompt(),
+                widget.WindowName(max_chars=20),
+                #widget.Chord(
+                #        chords_colors={
+                #        "launch": ("#ff0000", "#ffffff"),
+                #    },
+                #    name_transform=lambda name: name.upper(),
+                #),
                 widget.CheckUpdates(
                     distro="Arch_yay",
                     no_update_string="No Updates",
@@ -104,21 +135,53 @@ screens = [
                     padding=5
                     ),
                 widget.Spacer(length = 2),
-                widget.WlanIw(format='{essid} {percent:2.0%}'),
+                widget.WlanIw(
+                    format='{essid} {percent:2.0%}'
+                    ),
                 widget.Spacer(length = 2),
-                widget.Volume(padding=5, background="#648c11", fmt='VOL:{}'),
+                widget.Volume(
+                    padding=5, 
+                    background="#648c11", 
+                    fmt='VOL:{}'
+                    ),
                 widget.Spacer(length = 2),
-                widget.ThermalSensor(tag_sensor="CPU", format='{tag}:{temp:.0f}{unit}', background="#4169e1", padding=5),
+                widget.ThermalSensor(
+                    tag_sensor="CPU", 
+                    format='{tag}:{temp:.0f}{unit}', 
+                    background="#4169e1", 
+                    padding=5
+                    ),
                 widget.Spacer(length = 2),
-                widget.Memory(background="#009698", measure_mem="G", format='MEM:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}', padding=5),
+                widget.Memory(
+                        background="#009698", 
+                        measure_mem="G", 
+                        format='MEM:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}', 
+                        padding=5
+                        ),
                 widget.Spacer(length = 2),
-                widget.Clock(format="%a, %b %d", background="#b768a2", padding=5),
+                widget.Clock(
+                        format="%a, %b %d", 
+                        background="#b768a2", 
+                        padding=5
+                        ),
                 widget.Spacer(length = 2),
-                widget.Clock(format="%I:%M%p", background="#800080", padding=5),
+                widget.Clock(
+                        format="%I:%M%p", 
+                        background="#800080", 
+                        padding=5
+                        ),
                 widget.Spacer(length = 2),
-                widget.TextBox(" ⏻ ", padding=5, background="#8b0000", mouse_callbacks={"Button1": lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh power"))}),
+                widget.TextBox(
+                        text=" ⏻ ", 
+                        padding=5, 
+                        background="#8b0000", 
+                        mouse_callbacks={"Button1": lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh power"))}
+                        ),
                 widget.Spacer(length = 2),
-                widget.SwayNC(padding=5, fmt=' {}'),
+                widget.SwayNC(
+                        padding=5, 
+                        fmt=' {}'
+                        ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
@@ -142,25 +205,96 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.Spacer(length = 8),
-                widget.GroupBox(),
+                widget.Spacer(
+                    length = 10
+                    ),
+                widget.GroupBox(
+                    this_current_screen_border=colors[2],
+                    other_current_screen_border=colors[2],
+                    borderwidth=2
+                    ),
+                widget.TextBox(
+                    text="|", 
+                    padding=2, 
+                    fontsize=14, 
+                    foreground=colors[2]
+                    ),
                 widget.CurrentLayout(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        "launch": ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.Clock(format="%a, %b %d - %H:%M"),
+                widget.TextBox(
+                    text="|", 
+                    padding=2, 
+                    fontsize=14, 
+                    foreground=colors[2]
+                    ),
+                # widget.Prompt(),
+                widget.WindowName(max_chars=20),
+                #widget.Chord(
+                #        chords_colors={
+                #        "launch": ("#ff0000", "#ffffff"),
+                #    },
+                #    name_transform=lambda name: name.upper(),
+                #),
+                widget.CheckUpdates(
+                    distro="Arch_yay",
+                    no_update_string="No Updates",
+                    colour_have_updates="#d75f5f",
+                    padding=5
+                    ),
+                widget.Spacer(length = 2),
+                widget.WlanIw(
+                    format='{essid} {percent:2.0%}'
+                    ),
+                widget.Spacer(length = 2),
+                widget.Volume(
+                    padding=5, 
+                    background="#648c11", 
+                    fmt='VOL:{}'
+                    ),
+                widget.Spacer(length = 2),
+                widget.ThermalSensor(
+                    tag_sensor="CPU", 
+                    format='{tag}:{temp:.0f}{unit}', 
+                    background="#4169e1", 
+                    padding=5
+                    ),
+                widget.Spacer(length = 2),
+                widget.Memory(
+                        background="#009698", 
+                        measure_mem="G", 
+                        format='MEM:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}', 
+                        padding=5
+                        ),
+                widget.Spacer(length = 2),
+                widget.Clock(
+                        format="%a, %b %d", 
+                        background="#b768a2", 
+                        padding=5
+                        ),
+                widget.Spacer(length = 2),
+                widget.Clock(
+                        format="%I:%M%p", 
+                        background="#800080", 
+                        padding=5
+                        ),
+                widget.Spacer(length = 2),
+                widget.TextBox(
+                        text=" ⏻ ", 
+                        padding=5, 
+                        background="#8b0000", 
+                        mouse_callbacks={"Button1": lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh power"))}
+                        ),
+                widget.Spacer(length = 2),
+                widget.SwayNC(
+                        padding=5, 
+                        fmt=' {}'
+                        ),
                 # widget.TextBox("default config", name="default"),
                 # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead
                 # widget.StatusNotifier(),
                 # widget.Systray(),
                 # widget.QuickExit(),
-                widget.Spacer(length = 8),
+                widget.Spacer(length = 10),
             ],
             24,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
