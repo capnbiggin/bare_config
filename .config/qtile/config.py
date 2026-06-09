@@ -54,13 +54,13 @@ colors=[
         ['#FFFFFF', '#FFFFFF'], #colors[0]
         ['#000000', '#000000'], #colors[1]
         ['#FF9900', '#FF9900'], #colors[2]
-        [], #colors[3]
-        [], #colors[4]
-        [], #colors[5]
-        [], #colors[6]
-        [], #colors[7]
-        ['#696969', '#696969'], #colors[8]
-        ['#404040', '#404040']  #colors[9]
+        ['#648c11', '#648c11'], #colors[3]
+        ['#4169e1', '#4169e1'], #colors[4]
+        ['#009698', '#009698'], #colors[5]
+        ['#800080', '#800080'], #colors[6]
+        ['#b768a2', '#b768a2'], #colors[7]
+        ['#8b0000', '#8b0000'], #colors[8]
+        ['#696969', '#696969']  #colors[9]
         ]
 
 layout_theme = {
@@ -131,7 +131,7 @@ screens = [
                 widget.CheckUpdates(
                     distro="Arch_yay",
                     no_update_string="No Updates",
-                    colour_have_updates="#d75f5f",
+                    colour_have_updates=colors[8],
                     padding=5
                     ),
                 widget.Spacer(length = 2),
@@ -219,7 +219,7 @@ screens = [
                     fontsize=14, 
                     foreground=colors[2]
                     ),
-                widget.CurrentLayout(),
+                widget.CurrentLayout(mode="icon"),
                 widget.TextBox(
                     text="|", 
                     padding=2, 
@@ -237,7 +237,7 @@ screens = [
                 widget.CheckUpdates(
                     distro="Arch_yay",
                     no_update_string="No Updates",
-                    colour_have_updates="#d75f5f",
+                    colour_have_updates=colors[8],
                     padding=5
                     ),
                 widget.Spacer(length = 2),
@@ -247,19 +247,19 @@ screens = [
                 widget.Spacer(length = 2),
                 widget.Volume(
                     padding=5, 
-                    background="#648c11", 
+                    background=colors[3], 
                     fmt='VOL:{}'
                     ),
                 widget.Spacer(length = 2),
                 widget.ThermalSensor(
                     tag_sensor="CPU", 
                     format='{tag}:{temp:.0f}{unit}', 
-                    background="#4169e1", 
+                    background=colors[4], 
                     padding=5
                     ),
                 widget.Spacer(length = 2),
                 widget.Memory(
-                        background="#009698", 
+                        background=colors[5], 
                         measure_mem="G", 
                         format='MEM:{MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}', 
                         padding=5
@@ -267,20 +267,20 @@ screens = [
                 widget.Spacer(length = 2),
                 widget.Clock(
                         format="%a, %b %d", 
-                        background="#b768a2", 
+                        background=colors[6], 
                         padding=5
                         ),
                 widget.Spacer(length = 2),
                 widget.Clock(
                         format="%I:%M%p", 
-                        background="#800080", 
+                        background=colors[7], 
                         padding=5
                         ),
                 widget.Spacer(length = 2),
                 widget.TextBox(
                         text=" ⏻ ", 
                         padding=5, 
-                        background="#8b0000", 
+                        background=colors[8], 
                         mouse_callbacks={"Button1": lazy.spawn(os.path.expanduser("~/.config/rofi/scripts/capn-menu.sh power"))}
                         ),
                 widget.Spacer(length = 2),
