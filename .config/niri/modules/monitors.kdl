@@ -14,6 +14,7 @@ output "LG Electronics LG ULTRAWIDE 0x000357A4" {
     position x=0 y=0
 
     layout {
+        always-center-single-column
         default-column-width { proportion 0.75; }
 
         preset-column-widths { 
