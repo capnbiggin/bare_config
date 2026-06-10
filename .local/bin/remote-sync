@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rclone mount capn1drive: ~/capn1drive & disown
+
