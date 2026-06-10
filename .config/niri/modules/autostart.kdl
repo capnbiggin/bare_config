@@ -2,7 +2,7 @@
 spawn-at-startup "qs" "-c" "noctalia-shell"
 // spawn-at-startup "waybar"
 // spawn-at-startup "dms" "run"
-spawn-at-startup "swaync"
+// spawn-at-startup "swaync"
 // spawn-at-startup "waypaper" "--backend" "swww" "--restore"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "xwayland-satellite"
