@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["Propo", "Quickshell"],
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[QML]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
