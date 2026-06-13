@@ -17,11 +17,13 @@ layout {
         //off
         width 1
 
-        active-color "#FF9900"
+        active-color "#c061cb"
         inactive-color "#696969"
     }
 
     border {
+        off
+
         //off
 
         width 1
@@ -37,6 +39,5 @@ layout {
         color "#0007"
     }
 
-    struts {
-    }
+    struts 
 }

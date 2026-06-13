@@ -21,8 +21,8 @@ input {
       scroll-factor 1.0
     }
 
-    trackpoint {
-    }
+    trackpoint 
+
 
     focus-follows-mouse max-scroll-amount="0%"
 }
@@ -30,5 +30,5 @@ input {
 gestures {
   hot-corners {
     off
-  }
+    }
 }

@@ -17,3 +17,9 @@ screenshot-path "~/Pictures/captures/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 
 
+
+environment
+
+window-rule {
+    draw-border-with-background false
+}
