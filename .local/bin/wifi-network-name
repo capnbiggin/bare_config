@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-nmcli -g n | grep "connected to" | awk '{print substr($0, index($0,$3))}'
+nmcli -g n | grep "connected to" | awk '{print substr($0, index($0,$4))}'
 
