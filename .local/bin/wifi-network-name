@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+# awk remove 'wlan0: connected to' from `nmcli | grep "connected to"`
 nmcli -g n | grep "connected to" | awk '{print substr($0, index($0,$4))}'
 
