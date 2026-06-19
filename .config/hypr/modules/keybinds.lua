@@ -35,7 +35,7 @@ hl.bind(mod .. " + CTRL + W", hl.dsp.exec_cmd(wallpaper))
 -- Menu binds
 hl.bind(mod .. " + D", hl.dsp.exec_cmd(menu))
 hl.bind(mod .. " + SHIFT + D", hl.dsp.exec_cmd(capn_menu))
-hl.bind(mod .. " + SHIFT + D", hl.dsp.exec_cmd(power_menu))
+hl.bind(mod .. " + CTRL + D", hl.dsp.exec_cmd(power_menu))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd(cliphist))
 
 -- screencap
