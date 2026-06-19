@@ -6,24 +6,22 @@ import QtQuick
 
 Singleton {
   id: root
-  property string date 
+  property int updates
   
-  // Calendar
   Process {
-    id: dateProc
+    id: updateProc
 
-    command: ["sh", "-c", "date +' %a, %d %b'"]
+    command: ["sh", "-c", "yay -Qu | wc -l"]
     running: true
 
     stdout: StdioCollector {
-      onStreamFinished: root.date = this.text
+      onStreamFinished: root.updates = this.text
     }
-    
-  }  
+  }
   Timer {
     interval: 60000        // Every 60 seconds
-    running: true         // Start immediately
+    running: true      // Start immediately
     repeat: true          // Keep going forever
-    onTriggered: dateProc.running = true
+    onTriggered: updateProc.running = true
   }
 }

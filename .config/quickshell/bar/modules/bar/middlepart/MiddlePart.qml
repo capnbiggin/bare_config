@@ -3,27 +3,27 @@ import Quickshell.Io
 import QtQuick
 
 import qs.config
+import qs.services
+import qs.components
 
-Rectangle {
-  anchors.fill: parent
-  color: Colors.colBg
+Row {
+  anchors {
+    fill: parent
+    topMargin: 5
+  }
+  // anchors.fill: parent
+  // anchors.margins: 5
 
-  Text {
-    id: clock
+  Rectangle {
+    color: Colors.colBg
+    height: parent.height
+
+    width: clock.implicitWidth
     anchors.horizontalCenter: parent.horizontalCenter
-    anchors.verticalCenter: parent.verticalCenter
-    color: Colors.colBlue
-    font {
-      family: Fonts.fontFamily
-      pixelSize: Fonts.fontSize
-      bold: true
-    }
-    text: Qt.formatDateTime(new Date(), "hh:mm")
-    Timer {
-      interval: 1000
-      running: true
-      repeat: true
-      onTriggered: clock.text = Qt.formatDateTime(new Date(), "hh:mm")
+
+    Clock {
+      id: clock
+      anchors.fill: parent
     }
   }
 }

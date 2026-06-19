@@ -13,16 +13,10 @@ Variants {
   id: root
   model: Quickshell.screens
 
-  property int updates: 0
-  property int memUsage: 0
-  property int cpuUsage: 0
-  property var lastCpuIdle: 0
-  property var lastCpuTotal: 0
-  property var calendarText: ""
-  
   PanelWindow {
     id: mainWindow
     required property var modelData
+    screen: modelData
 
     anchors {
       top: true
