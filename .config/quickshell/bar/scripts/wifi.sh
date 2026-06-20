@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
 
-nmcli dev wifi | awk '/\*/{if (NR!=1) {print $3, $8"%"}}'
-# nmcli -g n | grep "connected to"
+<< 'COMMENT'
+This script is used to display the current Wi-Fi SSID and signal strength in the status bar. 
+It uses the `nmcli` command to get the Wi-Fi information from NetworkManager.
+
+Required - `networkmanager`
+COMMENT
+
+# SSID="$(nmcli -g n | grep "connected to" | awk 'match($0, / to /) {print substr($0, RSTART+RLENGTH)}')"
+# SSID="$(nmcli -g n | grep "connected to" | sed 's/.* to //')"
+
+SSID="$(nmcli -g n | grep "connected to" | awk '{print substr($0, index($0,$4))}')"
+SIG="$(nmcli -t -f IN-USE,SIGNAL dev wifi | grep '*' | sed 's/[^0-9]//g')"
+
+echo "󰖩 $SSID $SIG%"

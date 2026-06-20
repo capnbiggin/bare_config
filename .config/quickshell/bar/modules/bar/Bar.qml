@@ -15,6 +15,7 @@ Variants {
 
     PanelWindow {
         id: mainWindow
+        
         required property var modelData
         screen: modelData
 

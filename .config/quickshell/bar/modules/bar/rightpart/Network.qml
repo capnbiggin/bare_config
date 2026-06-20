@@ -19,6 +19,6 @@ Row {
       bold: true
     }
 
-    text: "󰖩 " + Wifi.wifiName
+    text: Wifi.wifiName
   }
 }

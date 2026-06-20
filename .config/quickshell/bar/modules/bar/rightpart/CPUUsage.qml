@@ -19,6 +19,6 @@ Row {
       bold: true
     }
 
-    text: " " + CPU.cpuUsage + "%"
+    text: " " + CPU.cpuUsage + "%" + " " + CPUTemp.cpuTemp
   }
 }
