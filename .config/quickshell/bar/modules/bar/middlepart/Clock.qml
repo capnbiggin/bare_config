@@ -19,7 +19,7 @@ Row {
     color: Colors.colBlue
     font {
       family: Fonts.fontFamily
-      pixelSize: Fonts.fontSize
+      pixelSize: Fonts.fontLg
       bold: true
     }
 

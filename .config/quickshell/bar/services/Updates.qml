@@ -12,7 +12,7 @@ Singleton {
     id: updateProc
 
     command: ["sh", "-c", "yay -Qu | wc -l"]
-    running: true
+    Component.onCompleted: running = true
 
     stdout: StdioCollector {
       onStreamFinished: root.updates = this.text

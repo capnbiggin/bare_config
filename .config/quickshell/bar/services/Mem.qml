@@ -13,6 +13,7 @@ Singleton {
   Process {
     id: memProc
     command: ["sh", "-c", "free | grep Mem"]
+    Component.onCompleted: running = true
     stdout: SplitParser {
       onRead: data => {
         if (!data) return;

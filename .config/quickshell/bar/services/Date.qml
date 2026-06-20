@@ -13,7 +13,7 @@ Singleton {
     id: dateProc
 
     command: ["sh", "-c", "date +' %a, %d %b'"]
-    running: true
+    Component.onCompleted: running = true
 
     stdout: StdioCollector {
       onStreamFinished: root.date = this.text

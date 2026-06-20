@@ -9,7 +9,7 @@ import qs.components
 Row {
   anchors {
     fill: parent
-    topMargin: 5
+    topMargin: Sizes.spacingSm
   }
   // anchors.fill: parent
   // anchors.margins: 5

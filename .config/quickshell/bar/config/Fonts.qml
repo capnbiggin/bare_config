@@ -3,8 +3,13 @@ pragma Singleton
 import QtQuick
 import Quickshell
 
-Singleton {
+QtObject {
   id: root
-  property string fontFamily: "JetBrainsMono Nerd Font Propo"
-  property int fontSize: 14
+
+  readonly property string fontFamily: "JetBrainsMono Nerd Font Propo"
+  
+  readonly property int fontXs: 10
+  readonly property int fontSm: 12
+  readonly property int fontMd: 14
+  readonly property int fontLg: 16
 }

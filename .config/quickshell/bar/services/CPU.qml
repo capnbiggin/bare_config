@@ -13,6 +13,7 @@ Singleton {
   Process {
     id: cpuProc
     command: ["sh", "-c", "head -1 /proc/stat"]
+    Component.onCompleted: running = true
     stdout: SplitParser {
       onRead: data => {
         if (!data) return;
@@ -27,7 +28,7 @@ Singleton {
       }
     }
   }
-  
+
   Timer {
     interval: 2000        // Every 2 seconds
     running: true         // Start immediately

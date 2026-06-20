@@ -15,10 +15,10 @@ Row {
     color: Colors.colGreen
     font {
       family: Fonts.fontFamily
-      pixelSize: Fonts.fontSize
+      pixelSize: Fonts.fontMd
       bold: true
     }
 
-    text: Wifi.wifiName
+    text: "󰖩 " + Wifi.wifiName
   }
 }

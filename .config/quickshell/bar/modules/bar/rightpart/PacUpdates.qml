@@ -15,7 +15,7 @@ Row {
     color: Colors.colRed
     font {
       family: Fonts.fontFamily
-      pixelSize: Fonts.fontSize
+      pixelSize: Fonts.fontMd
       bold: true
     }
 

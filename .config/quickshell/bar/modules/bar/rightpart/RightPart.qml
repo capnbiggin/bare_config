@@ -9,12 +9,17 @@ import qs.components
 Row {
   anchors {
     right: parent.right
-    rightMargin: 10
+    rightMargin: Sizes.spacingLg
     verticalCenter: parent.verticalCenter
   }
-  spacing: 5
+  spacing: Sizes.spacingSm
+
+  Text {
+    text: "1"
+    color: "transparent"
+  }
   
-  // Updates
+  //--- Updates ---------------------
   Rectangle {
     color: Colors.colBg
     height: parent.height
@@ -26,9 +31,9 @@ Row {
     }
   }
 
-  Devider {color: Colors.colMuted}
+  Divider {color: Colors.colMuted}
 
-  // CPU
+  //--- CPU ---------------------------
   Rectangle {
     color: Colors.colBg
     height: parent.height
@@ -40,9 +45,9 @@ Row {
     }
   }
 
-  Devider {color: Colors.colMuted}
+  Divider {color: Colors.colMuted}
 
-  // Memory
+  //--- Memory ------------------------
   Rectangle {
     color: Colors.colBg
     height: parent.height
@@ -54,9 +59,9 @@ Row {
     }
   }
 
-  Devider {color: Colors.colMuted}
+  Divider {color: Colors.colMuted}
 
-  // Network
+  //--- Network -------------------------
   Rectangle {
     color: Colors.colBg
     height: parent.height
@@ -68,56 +73,4 @@ Row {
       anchors.fill: parent
     }
   }
-
-  // Process {
-  //   id: memProc
-  //   command: ["sh", "-c", "free | grep Mem"]
-  //   stdout: SplitParser {
-  //     onRead: data => {
-  //       if (!data) return;
-  //       var parts = data.trim().split(/\s+/);
-  //       var total = parseInt(parts[1]) || 1;
-  //       var used = parseInt(parts[2]) || 0;
-  //       memUsage = Math.round(100 * used / total);
-  //     }
-  //   }
-  //   Component.onCompleted: running = true
-  // }
-  Text {
-    text: "1"
-  }
-
-  // Devider {color: Colors.colMuted}  
-
-  // // Calendar
-  // Process {
-  //   id: calProc
-  //   command: ["sh", "-c", "date +' %a, %d %b'"]
-  //   stdout: SplitParser {
-  //     onRead: data => {
-  //       if (!data) return;
-  //       calendarText = data.trim();
-  //     }
-  //   }
-  //   Component.onCompleted: running = true
-  // }
-  // Text {
-  //   text: calendarText
-  //   color: Colors.colBlue
-  //   font {
-  //     family: Fonts.fontFamily
-  //     pixelSize: Fonts.fontSize
-  //     bold: true
-  //   }
-  //   Timer {
-  //     interval: 60000        // Every 60 seconds
-  //     running: true         // Start immediately
-  //     repeat: true          // Keep going forever
-  //     onTriggered: calProc.running = true
-  //   }
-  // }
-
-  // Devider {color: Colors.colMuted}
-
-
 }

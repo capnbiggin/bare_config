@@ -13,7 +13,7 @@ Singleton {
     id: wifiProc
 
     command: ["sh", "-c", "~/.config/quickshell/bar/scripts/wifi.sh"]
-    running: true
+    Component.onCompleted: running = true
 
     stdout: StdioCollector {
       onStreamFinished: root.wifiName = this.text

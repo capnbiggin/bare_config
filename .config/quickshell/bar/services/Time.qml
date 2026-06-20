@@ -13,7 +13,7 @@ Singleton {
     id: timeProc
 
     command: ["sh", "-c", "date +'%l:%M%P'"]
-    running: true
+    Component.onCompleted: running = true
 
     stdout: StdioCollector {
       onStreamFinished: root.time = this.text
