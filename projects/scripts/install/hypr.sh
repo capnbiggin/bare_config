@@ -20,4 +20,3 @@ for pak in "${HYPR[@]}"; do
   log_info "Installing $pak"
   yay -S --needed --noconfirm "$pak"
 done
-systemctl --user add-wants niri.service
