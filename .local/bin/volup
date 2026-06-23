@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-wpctl set-volume "$@"%
+#wpctl set-volume @DEFAULT_AUDIO_SINK@ "$@"%+
+
+get_volume() {
+  wpctl get-volume 
+}
+
+main() {
+
+}
