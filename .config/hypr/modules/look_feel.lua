@@ -1,7 +1,7 @@
 hl.config({
     general = {
-        gaps_in          = 2,
-        gaps_out         = 2,
+        gaps_in          = 5,
+        gaps_out         = 15,
 
         border_size      = 1,
 
@@ -16,12 +16,12 @@ hl.config({
         -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
         allow_tearing    = false,
 
-        layout           = "master",
+        layout           = "dwindle",
     },
 
     decoration = {
         rounding         = 10,
-        rounding_power   = 0,
+        rounding_power   = 2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
@@ -43,7 +43,7 @@ hl.config({
     },
 
     animations = {
-        enabled = false,
+        enabled = true,
     },
 })
 
