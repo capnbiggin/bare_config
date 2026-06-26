@@ -1,0 +1,69 @@
+import Quickshell
+import QtQuick
+import QtQuick.Layouts
+
+import "../components"
+import "../config"
+
+Variants {
+  id: root
+  model: Quickshell.screens
+
+  PanelWindow {
+    id: mainPanel
+    required property var modelData
+    screen: modelData
+    anchors {
+      top: true
+      right: true
+      left: true
+    }
+    implicitHeight: Sizes.barHeight
+    color: Colors.bg0
+
+    GridLayout {
+      id: grid
+      columns: 3
+      rows: 1
+      columnSpacing: 0
+      anchors {
+        fill: parent
+        leftMargin: Sizes.s4
+        rightMargin: Sizes.s4
+      }
+        
+      Item {
+        id: leftItem
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        RowLayout {
+          anchors.fill: parent
+          Workspaces {}
+        }
+      }
+
+      Item {
+        id: centerItem
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        RowLayout {
+          anchors.fill: parent
+          Clock {}
+        }
+      }
+
+      Item {
+        id: rightItem
+        Layout.fillWidth: true
+        Layout.fillHeight: true
+        RowLayout {
+          anchors.verticalCenter: parent.verticalCenter
+          anchors.right: parent.right
+          spacing: Sizes.s0
+          Divider {}
+          TestText {}
+        }
+      }  
+    }
+  }
+}

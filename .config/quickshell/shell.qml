@@ -1,3 +1,5 @@
+// ─── Root Shell ───────────────────────
+
 import QtQuick
 import Quickshell
 
@@ -6,9 +8,9 @@ import "modules/notification"
 
 ShellRoot {
     id: shellRoot
-    // ─── Bar ───────────────────────────────────────────────
+    // ─── Bar ───────────────────────────
     Bar {}
 
-    // ─── Notification center ───────────────────────────────
+    // ─── Notification center ───────────
     NotificationCenter {}
 }

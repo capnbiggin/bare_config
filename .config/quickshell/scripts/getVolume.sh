@@ -7,14 +7,17 @@ It uses the `wpctl` command to get the volume information from WirePlumber.
 Required - `wireplumber` & `pipewire`
 COMMENT
 
-BT_ID="$(wpctl list audio sinks | grep "blue" | awk '{print $1}')"
-SPEAKER_ID="$(wpctl list audio sinks | grep "Speaker" | awk '{print $1}')"
+# BT_ID="$(wpctl list audio sinks | grep "blue" | awk '{print $1}')"
+# SPEAKER_ID="$(wpctl list audio sinks | grep "Speaker" | awk '{print $1}')"
 
-if [[ -n ${BT_ID} ]]; then
-  OUTPUT_ID=${BT_ID}
-else
-  OUTPUT_ID=${SPEAKER_ID}
-fi
+# if [[ -n ${BT_ID} ]]; then
+#   OUTPUT_ID=${BT_ID}
+# else
+#   OUTPUT_ID=${SPEAKER_ID}
+# fi
+
+OUTPUT_ID="@DEFAULT_AUDIO_SINK@"
+
 RAW_VOL="$(wpctl get-volume ${OUTPUT_ID})"
 VOL_FRACTION="$(echo ${RAW_VOL} | awk '{print $2}')"
 VOL_PERCENT="$(awk -v v="$VOL_FRACTION" 'BEGIN{printf "%d", (v * 100) + 0.5}')"
