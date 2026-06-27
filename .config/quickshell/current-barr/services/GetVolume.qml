@@ -12,7 +12,7 @@ Singleton {
   Process {
     id: volProc
 
-    command: ["sh", "-c", "~/.config/quickshell/current-barr/scripts/getVolume.sh"]
+    command: ["sh", "-c", "~/.config/quickshell/scripts/getVolume.sh"]
     Component.onCompleted: running = true
 
     stdout: StdioCollector {

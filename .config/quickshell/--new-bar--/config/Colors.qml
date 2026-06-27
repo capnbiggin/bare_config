@@ -33,6 +33,8 @@ Singleton {
         property string color13:        "#e89aa8"
         property string color14:        "#3dd1b0"
         property string color15:        "#bac2de"
+        property string color16:        "#fab387"
+        property string color17:        "#f5e0dc"
       }
   }
 
@@ -54,7 +56,7 @@ Singleton {
   readonly property color bg3:      "#313244"
   readonly property color bg4:      "#45475a"
   
-  readonly property color bgBlack: "#000000"
+  readonly property color bgBlack:  "#000000"
 
   // ─── Foreground ───────────────────────
   readonly property color fg:       pal.foreground

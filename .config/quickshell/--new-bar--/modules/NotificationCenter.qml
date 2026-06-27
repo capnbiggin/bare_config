@@ -54,7 +54,7 @@ Item {
         margins { top: 12; right: 12 }
 
         color: "transparent"
-        implicitWidth: 380
+        implicitWidth: Sizes.notifiWidth
         implicitHeight: notifModel.count * 85   // rough estimate, grows with more notifs
 
         // ExclusionMode: ExclusionMode.Ignore

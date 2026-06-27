@@ -21,7 +21,7 @@ import "../config"
 Item {
     id: root
 
-    property color glowColor: Colors.colAccent
+    property color glowColor: Colors.accent
     property bool  active:    false
     property real  intensity: 0.6     // 0–1, glow strength
     property real  spread:    24      // px, blur radius of the glow
