@@ -12,7 +12,7 @@ Singleton {
   Process {
     id: wifiProc
 
-    command: ["sh", "-c", "~/.config/quickshell/scripts/wifi.sh"]
+    command: ["sh", "-c", "~/.config/quickshell/current-barr/scripts/wifi.sh"]
     Component.onCompleted: running = true
 
     stdout: StdioCollector {

@@ -18,52 +18,65 @@ Variants {
       right: true
       left: true
     }
+    margins {
+      top: 10
+      left: 10
+      right: 10
+    }
     implicitHeight: Sizes.barHeight
-    color: Colors.bg0
+    color: "transparent"
 
-    GridLayout {
-      id: grid
-      columns: 3
-      rows: 1
-      columnSpacing: 0
-      anchors {
-        fill: parent
-        leftMargin: Sizes.s4
-        rightMargin: Sizes.s4
-      }
-        
-      Item {
-        id: leftItem
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        RowLayout {
-          anchors.fill: parent
-          Workspaces {}
-        }
-      }
+    Rectangle{
+      anchors.fill: parent
+      color:Colors.bg0
+      radius: Sizes.rMd
 
-      Item {
-        id: centerItem
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        RowLayout {
-          anchors.fill: parent
-          Clock {}
+      GridLayout {
+        id: grid
+        columns: 3
+        rows: 1
+        columnSpacing: 0
+        anchors {
+          fill: parent
+          leftMargin: Sizes.s4
+          rightMargin: Sizes.s4
         }
-      }
 
-      Item {
-        id: rightItem
-        Layout.fillWidth: true
-        Layout.fillHeight: true
-        RowLayout {
-          anchors.verticalCenter: parent.verticalCenter
-          anchors.right: parent.right
-          spacing: Sizes.s0
-          Divider {}
-          TestText {}
+        Item {
+          id: leftItem
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+          RowLayout {
+            anchors.fill: parent
+            Workspaces {}
+          }
         }
-      }  
+
+        Item {
+          id: centerItem
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+          RowLayout {
+            anchors.fill: parent
+            Clock {Layout.alignment:Qt.AlignHCenter}
+          }
+        }
+
+        Item {
+          id: rightItem
+          Layout.fillWidth: true
+          Layout.fillHeight: true
+          RowLayout {
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.right: parent.right
+            spacing: Sizes.s4
+
+            Network {}
+            Volume {}
+            Battery {}
+          }
+        }  
+      }
     }
   }
 }

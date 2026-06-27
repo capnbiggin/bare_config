@@ -1,8 +1,8 @@
 // modules/Notifications/NotificationItem.qml
 
 import QtQuick
-import "../../config"
-import "../../components"
+import "../config"
+import "../components"
 
 Rectangle {
     id: root
@@ -18,15 +18,15 @@ Rectangle {
     height: column.implicitHeight + 24
     radius: Sizes.spacingMd - 2
 
-    color: Colors.colBg
-    border.color: urgency === 2 ? Colors.colRed : Colors.colCyan
+    color: Colors.bg0
+    border.color: urgency === 2 ? Colors.red : Colors.teal
 
     // ─── Glow for critical notifications ────────────────────
     PulseGlow {
         anchors.fill: parent
         anchors.margins: -6
         active:    urgency === 2
-        glowColor: Colors.colRed
+        glowColor: Colors.red
         intensity: 0.5
         pulseSpeed: 1.0
         z: -1
@@ -57,18 +57,18 @@ Rectangle {
         // App name
         Text {
             text:  root.appName
-            color: Colors.colCyan
-            font.family: Fonts.fontFamily
-            font.pixelSize: Fonts.fontXs
+            color: Colors.teal
+            font.family: Fonts.body
+            font.pixelSize: Fonts.fsCaption
             font.bold: true
         }
 
         // Summary
         Text {
             text:  root.summary
-            color: Colors.colFg
-            font.family: Fonts.fontFamily
-            font.pixelSize: Fonts.fontSm
+            color: Colors.fg
+            font.family: Fonts.body
+            font.pixelSize: Fonts.fsCaption
             font.bold: true
             wrapMode: Text.WordWrap
             width: parent.width
@@ -78,9 +78,9 @@ Rectangle {
         Text {
             visible: root.body !== ""
             text:    root.body
-            color:   Colors.colMuted
-            font.family: Fonts.fontFamily
-            font.pixelSize: Fonts.fontSm
+            color:   Colors.fgMuted
+            font.family: Fonts.body
+            font.pixelSize: Fonts.fsCaption
             wrapMode: Text.WordWrap
             width: parent.width
             maximumLineCount: 3

@@ -12,7 +12,7 @@ Singleton {
   Process {
     id: cpuTempProc
 
-    command: ["sh", "-c", "~/.config/quickshell/scripts/cpuTemp.sh"]
+    command: ["sh", "-c", "~/.config/quickshell/current-barr/scripts/cpuTemp.sh"]
     Component.onCompleted: running = true
 
     stdout: StdioCollector {

@@ -55,7 +55,7 @@ Item {
 
         color: "transparent"
         implicitWidth: 380
-        implicitHeight: notifModel.count * 80   // rough estimate, grows with more notifs
+        implicitHeight: notifModel.count * 85   // rough estimate, grows with more notifs
 
         // ExclusionMode: ExclusionMode.Ignore
         visible: notifModel.count > 0

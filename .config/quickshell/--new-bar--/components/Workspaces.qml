@@ -10,7 +10,7 @@ RowLayout {
   spacing: Sizes.s1
 
   Repeater {
-    model: 9
+    model: 10
 
     Rectangle {
       id: wsButton
@@ -24,16 +24,23 @@ RowLayout {
       implicitWidth: label.implicitWidth + Sizes.s2
       implicitHeight: 22
       radius: Sizes.rXs
-      color: isActive ? Colors.bg4 
+      color: isActive ? Colors.bg3
                       : (
                         ws ? Colors.bg2 
                            : "transparent")
 
+      Behavior on color {
+        ColorAnimation { duration: 150 }
+      }
+
       Text {
         id: label
         anchors.centerIn: parent
-        text: wsButton.index + 1
-        color: wsButton.isActive ? Colors.aqua 
+        text: {
+          if ((wsButton.index + 1) == 10) return "0"
+          return wsButton.index + 1
+        }
+        color: wsButton.isActive ? Colors.teal
                                  : (
                                    ws ? Colors.fg 
                                       : Colors.fgMuted

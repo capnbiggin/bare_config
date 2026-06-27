@@ -6,6 +6,7 @@ import Quickshell
 QtObject {
   id: root
 
+  readonly property string mono:      "JetBrainsMono Nerd Font Propo"
   readonly property string body:      "JetBrainsMono Nerd Font Propo"
   
   readonly property int fontSize:       14

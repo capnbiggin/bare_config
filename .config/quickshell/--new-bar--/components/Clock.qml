@@ -7,7 +7,6 @@ import qs.config
 Text {
   text: Qt.formatDateTime(clock.date, 'h:mm ap')
   color: Colors.fg
-  anchors.centerIn: parent
 
   font {
     family: Fonts.body

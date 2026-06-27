@@ -14,25 +14,25 @@ Singleton {
 
       JsonAdapter {
         id: pal
-        property string background:     "#040e0d"
-        property string foreground:     "#f5e2c5"
-        property string cursor:         "#f5e2c5"
-        property string color0:         "#040e0d"
-        property string color1:         "#ff6048"
-        property string color2:         "#7ad9a8"
-        property string color3:         "#f5cd5b"
-        property string color4:         "#5fc8d4"
-        property string color5:         "#e89aa8"
-        property string color6:         "#3dd1b0"
-        property string color7:         "#c4b09a"
-        property string color8:         "#3a1a35"
+        property string background:     "#1e1e2e"
+        property string foreground:     "#cdd6f4"
+        property string cursor:         "#f5e0dc"
+        property string color0:         "#bac2de"
+        property string color1:         "#f38ba8"
+        property string color2:         "#a6e3a1"
+        property string color3:         "#f9e2af"
+        property string color4:         "#89b4fa"
+        property string color5:         "#f5c2e7"
+        property string color6:         "#94e2d5"
+        property string color7:         "#a6adc8"
+        property string color8:         "#585b70"
         property string color9:         "#ff6048"
         property string color10:        "#7ad9a8"
         property string color11:        "#f5cd5b"
         property string color12:        "#5fc8d4"
         property string color13:        "#e89aa8"
         property string color14:        "#3dd1b0"
-        property string color15:        "#f5e2c5"
+        property string color15:        "#bac2de"
       }
   }
 
@@ -49,10 +49,10 @@ Singleton {
 
   // ─── Background ───────────────────────
   readonly property color bg0:      pal.background
-  readonly property color bg1:      "#0a1816"
-  readonly property color bg2:      "#0f211f"
-  readonly property color bg3:      "#152a26"
-  readonly property color bg4:      "#1d3631"
+  readonly property color bg1:      "#11111b"
+  readonly property color bg2:      "#181825"
+  readonly property color bg3:      "#313244"
+  readonly property color bg4:      "#45475a"
   
   readonly property color bgBlack: "#000000"
 
@@ -68,7 +68,7 @@ Singleton {
   readonly property color yellow:   pal.color3
   readonly property color blue:     pal.color4
   readonly property color purple:   pal.color5
-  readonly property color aqua:     pal.color6
+  readonly property color teal:     pal.color6
 
   // ─── Greys ───────────────────────────
   readonly property color grey0:    pal.color8
