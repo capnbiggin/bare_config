@@ -22,9 +22,9 @@ RowLayout {
   Text {
     text: root.icon
     color: root.charging ? Colors.blue
-                         : root.level <= 15 ? Colors.red
-                         : root.level <= 30 ? Colors.yellow
-                         : Colors.green
+                         : root.level <= 15 ? Colors.bad
+                         : root.level <= 30 ? Colors.warn
+                         : Colors.good
     font {
       family: Fonts.mono
       pixelSize: Fonts.fsBody
@@ -36,6 +36,7 @@ RowLayout {
     font {
       family: Fonts.body
       pixelSize: Fonts.fsBody
+      weight: Fonts.wSemiBold
     }
   }
 }

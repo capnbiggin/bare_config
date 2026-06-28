@@ -41,6 +41,7 @@ RowLayout {
     font {
       family: Fonts.body
       pixelSize: Fonts.fsBody
+      weight: Fonts.wSemiBold
     }
   }
 }

@@ -14,6 +14,7 @@ RowLayout {
   readonly property bool ready: sink && sink.ready
   readonly property bool muted: ready && sink.audio.muted
   readonly property int vol: ready ? Math.round(sink.audio.volume * 100) : 0
+
   readonly property string icon: {
     if (!ready) return String.fromCodePoint(0xF0581)
     if (muted) return String.fromCodePoint(0xF075F)
@@ -22,6 +23,7 @@ RowLayout {
     if (vol < 76) return String.fromCodePoint(0xF0580)
     return String.fromCodePoint(0xF057E)
   }
+
   Text {
     text: root.icon
     color: Colors.yellow
@@ -40,36 +42,11 @@ RowLayout {
     font {
       family: Fonts.body
       pixelSize: Fonts.fsBody
+      weight: Fonts.wSemiBold
     }
   }
 
-  MouseArea {
-    id: volMouseArea
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-    acceptedButtons: Qt.NoButton
-    onWheel: wheel => {
-      if (wheel.angleDelta.y > 0) {
-        volIncProc.running = true
-      }else if (wheel.angleDelta.y < 0) {
-        volDecProc.running = true
-      }
-    }
-  }
-  
   PwObjectTracker {
     objects: [root.sink]
-  }
-
-  // Volume level increase
-  Process {
-      id: volIncProc
-      command: ["wpctl", "set-volume", "-l", "1", "@DEFAULT_AUDIO_SINK@", "2%+"]
-  }
-
-  // Volume level decrease
-  Process {
-      id: volDecProc
-      command: ["wpctl", "set-volume", "-l", "1", "@DEFAULT_AUDIO_SINK@", "2%-"]
   }
 }

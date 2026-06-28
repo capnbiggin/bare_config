@@ -20,7 +20,7 @@ Text {
   font {
     family: Fonts.body
     pixelSize: Fonts.fsHeader
-    weight: Fonts.wBold
+    weight: Fonts.wSemiBold
   }
   SystemClock {
     id: clockProc

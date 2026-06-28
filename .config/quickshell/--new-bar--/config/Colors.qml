@@ -77,4 +77,9 @@ Singleton {
   readonly property color grey0:    pal.color8
   readonly property color grey1:    pal.color0
   readonly property color grey2:    pal.color7
+
+  // ─── Warn ─────────────────────────── 
+  readonly property color good:     pal.color2
+  readonly property color warn:     pal.color3
+  readonly property color bad:      pal.color1
 }
