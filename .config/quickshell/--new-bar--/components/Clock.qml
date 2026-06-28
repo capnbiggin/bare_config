@@ -1,11 +1,21 @@
 import Quickshell
 import QtQuick
 
-import qs.config
+import "../config"
 
 
 Text {
-  text: Qt.formatDateTime(clock.date, 'h:mm ap')
+  id:root
+
+  property bool date
+
+  text: {
+    if (date) {
+      Qt.formatDateTime(clockProc.date, 'ddd, MMM d')
+    }else {
+    Qt.formatDateTime(clockProc.date, 'h:mm ap')
+    }
+  }
   color: Colors.fg
   font {
     family: Fonts.body
@@ -13,8 +23,20 @@ Text {
     weight: Fonts.wBold
   }
   SystemClock {
-    id: clock
+    id: clockProc
     precision: SystemClock.Minutes
   }
+  MouseArea {
+    anchors.fill: parent
+    acceptedButtons: Qt.LeftButton | Qt.RightButton
+    onPressed: mouse => {
+      if (mouse.button == Qt.LeftButton) {
+        if (!date) {
+          root.date = true
+        }else if (date) {
+          root.date = false
+        }
+      }
+    }
+  }
 }
-

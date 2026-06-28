@@ -7,36 +7,37 @@ import Quickshell.Io
 Singleton {
   id: root
 
-  FileView {
-      path: `${Quickshell.env("HOME")}/.config/quickshell/colors.json`
-      watchChanges: true
-      onFileChanged: reload()
+  // FileView {
+  //     path: `${Quickshell.env("HOME")}/.config/quickshell/colors.json`
+  //     watchChanges: true
+  //     onFileChanged: reload()
 
-      JsonAdapter {
-        id: pal
-        property string background:     "#1e1e2e"
-        property string foreground:     "#cdd6f4"
-        property string cursor:         "#f5e0dc"
-        property string color0:         "#bac2de"
-        property string color1:         "#f38ba8"
-        property string color2:         "#a6e3a1"
-        property string color3:         "#f9e2af"
-        property string color4:         "#89b4fa"
-        property string color5:         "#f5c2e7"
-        property string color6:         "#94e2d5"
-        property string color7:         "#a6adc8"
-        property string color8:         "#585b70"
-        property string color9:         "#ff6048"
-        property string color10:        "#7ad9a8"
-        property string color11:        "#f5cd5b"
-        property string color12:        "#5fc8d4"
-        property string color13:        "#e89aa8"
-        property string color14:        "#3dd1b0"
-        property string color15:        "#bac2de"
-        property string color16:        "#fab387"
-        property string color17:        "#f5e0dc"
-      }
+      // JsonAdapter {
+  QtObject {
+    id: pal
+    property string background:     "#1e1e2e"
+    property string foreground:     "#cdd6f4"
+    property string cursor:         "#f5e0dc"
+    property string color0:         "#bac2de"
+    property string color1:         "#f38ba8"
+    property string color2:         "#a6e3a1"
+    property string color3:         "#f9e2af"
+    property string color4:         "#89b4fa"
+    property string color5:         "#f5c2e7"
+    property string color6:         "#94e2d5"
+    property string color7:         "#a6adc8"
+    property string color8:         "#585b70"
+    property string color9:         "#ff6048"
+    property string color10:        "#7ad9a8"
+    property string color11:        "#f5cd5b"
+    property string color12:        "#5fc8d4"
+    property string color13:        "#e89aa8"
+    property string color14:        "#3dd1b0"
+    property string color15:        "#bac2de"
+    property string color16:        "#fab387"
+    property string color17:        "#f5e0dc"
   }
+  // }
 
   // color helpers
   // Blend two colors (t=0 → a, t=1 → b). We derive the surface shades from the
@@ -61,7 +62,7 @@ Singleton {
   // ─── Foreground ───────────────────────
   readonly property color fg:       pal.foreground
   readonly property color fgMuted:  alpha(fg, 0.60)
-  readonly property color accent:   pal.color6
+  readonly property color accent:   pal.color12
 
   // ─── Colors ───────────────────────────
   readonly property color red:      pal.color1
@@ -74,6 +75,6 @@ Singleton {
 
   // ─── Greys ───────────────────────────
   readonly property color grey0:    pal.color8
-  readonly property color grey1:    "#5a4d3e"
+  readonly property color grey1:    pal.color0
   readonly property color grey2:    pal.color7
 }

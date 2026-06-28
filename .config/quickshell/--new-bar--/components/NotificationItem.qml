@@ -16,7 +16,7 @@ Rectangle {
 
     width:  300
     height: column.implicitHeight + 24
-    radius: Sizes.spacingMd - 2
+    radius: Sizes.rSm
 
     color: Colors.bg0
     border.color: urgency === 2 ? Colors.red : Colors.teal

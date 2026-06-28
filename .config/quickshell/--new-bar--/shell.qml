@@ -12,6 +12,5 @@ ShellRoot {
     id: shellRoot
     // ─── Bar ───────────────────────
     Bar {}
-
     NotificationCenter {}
 }

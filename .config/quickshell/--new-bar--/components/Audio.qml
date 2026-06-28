@@ -1,5 +1,6 @@
 import Quickshell
 import Quickshell.Services.Pipewire
+import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 
@@ -41,7 +42,34 @@ RowLayout {
       pixelSize: Fonts.fsBody
     }
   }
+
+  MouseArea {
+    id: volMouseArea
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+    acceptedButtons: Qt.NoButton
+    onWheel: wheel => {
+      if (wheel.angleDelta.y > 0) {
+        volIncProc.running = true
+      }else if (wheel.angleDelta.y < 0) {
+        volDecProc.running = true
+      }
+    }
+  }
+  
   PwObjectTracker {
     objects: [root.sink]
+  }
+
+  // Volume level increase
+  Process {
+      id: volIncProc
+      command: ["wpctl", "set-volume", "-l", "1", "@DEFAULT_AUDIO_SINK@", "2%+"]
+  }
+
+  // Volume level decrease
+  Process {
+      id: volDecProc
+      command: ["wpctl", "set-volume", "-l", "1", "@DEFAULT_AUDIO_SINK@", "2%-"]
   }
 }

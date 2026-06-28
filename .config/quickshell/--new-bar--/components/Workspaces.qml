@@ -24,7 +24,7 @@ RowLayout {
       implicitWidth: label.implicitWidth + Sizes.s2
       implicitHeight: 22
       radius: Sizes.rXs
-      color: isActive ? Colors.bg3
+      color: isActive ? Colors.bg4
                       : (
                         ws ? Colors.bg2 
                            : "transparent")
@@ -40,7 +40,7 @@ RowLayout {
           if ((wsButton.index + 1) == 10) return "0"
           return wsButton.index + 1
         }
-        color: wsButton.isActive ? Colors.teal
+        color: wsButton.isActive ? Colors.accent
                                  : (
                                    ws ? Colors.fg 
                                       : Colors.fgMuted

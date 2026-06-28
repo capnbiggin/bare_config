@@ -19,17 +19,17 @@ Variants {
       left: true
     }
     margins {
-      top: 10
-      left: 10
-      right: 10
+      top: Sizes.s2
+      left: Sizes.s4
+      right: Sizes.s4
     }
     implicitHeight: Sizes.barHeight
     color: "transparent"
 
     Rectangle{
       anchors.fill: parent
-      color:Colors.bg0
-      radius: Sizes.rMd
+      color: Colors.bg0
+      radius: height / 2 //Sizes.rMd
 
       GridLayout {
         id: grid
@@ -72,7 +72,7 @@ Variants {
             spacing: Sizes.s4
 
             Network {}
-            Volume {}
+            Audio {}
             Battery {}
           }
         }  
