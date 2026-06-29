@@ -18,18 +18,18 @@ Variants {
       right: true
       left: true
     }
-    margins {
-      top: Sizes.s2
-      left: Sizes.s4
-      right: Sizes.s4
-    }
+    //margins {
+    //  top: Sizes.s2
+    //  left: Sizes.s4
+    //  right: Sizes.s4
+    //}
     implicitHeight: Sizes.barHeight
     color: "transparent"
 
     Rectangle{
       anchors.fill: parent
       color: Colors.bg0
-      radius: height / 2 //Sizes.rMd
+      //radius: height / 2 //Sizes.rMd
 
       GridLayout {
         id: grid
